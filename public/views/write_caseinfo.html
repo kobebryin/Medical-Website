@@ -1,0 +1,466 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!--基本資料登錄表-->
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>webtest</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        .auto-style1 {
+            font-size: large;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">代謝症候群個案管理系統</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i>追蹤個案</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>個案基本資料<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <!--db欄位要增加現在時間-->
+                                    <a href="write_caseinfo.html">基本資料登錄</a>
+                                </li>
+                                <li>
+                                    <a href="read_caseinfo.html">基本資料查詢</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>檢驗資料<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="write_casedata.html">檢驗資料登錄</a>
+                                </li>
+                                <li>
+                                    <a href="read_casedata.html">檢驗資料查詢</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i>照護資料<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="write_careinfo.html">照護資料登錄</a>
+                                </li>
+                                <li>
+                                    <a href="read_careinfo.html">照護資料查詢</a>
+                                </li>
+                                <li>
+                                    <a href="read_daycareinfo.html">日常資料與運動紀錄查詢(app)</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>結案資料<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="write_endinfo.html">結案資料登錄</a>
+                                </li>
+                                <li>
+                                    <a href="read_endinfo.html">結案資料查詢</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">基本資料與檢驗資料登錄</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-edit fa-fw"></i>基本資料
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">收案日期：</span></label>
+                                            <input class="form-control" style="font-size: large" placeholder="格式範例：20170101">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">個案班級：</span></label>
+                                            <input class="form-control" style="font-size: large" placeholder="格式範例：A班則填入A即可">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">姓名：</span></label>
+                                            <input class="form-control" style="font-size: large" placeholder="請輸入中文姓名">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">病歷編號：</span></label>
+                                            <input class="form-control" style="font-size: large" placeholder="請輸入病歷號碼">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">性別：</span></label>
+                                            <select class="form-control" style="font-size: large">
+                                                <option>男</option>
+                                                <option>女</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">年齡：</span></label>
+                                            <input class="form-control" style="font-size: large" placeholder="請輸入實歲年齡">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">宗教信仰：</span></label>
+                                            <select class="form-control" style="font-size: large">
+                                                <option>佛教</option>
+                                                <option>回教</option>
+                                                <option>基督教</option>
+                                                <option>天主教</option>
+                                                <option>道教或燒香、拜拜民間傳統信仰</option>
+                                                <option>其它</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">教育程度：</span></label>
+                                            <select class="form-control" style="font-size: large">
+                                                <option>不識字</option>
+                                                <option>小學</option>
+                                                <option>國中</option>
+                                                <option>高中職或專科</option>
+                                                <option>大學</option>
+                                                <option>研究所暨以上</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">婚姻狀況：</span></label>
+                                            <select class="form-control" style="font-size: large">
+                                                <option>未婚</option>
+                                                <option>已婚</option>
+                                                <option>離婚</option>
+                                                <option>喪偶</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">目前就業：</span></label>
+                                            <select class="form-control" style="font-size: large">
+                                                <option>有</option>
+                                                <option>無</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">居住狀況：</span></label>
+                                            <select class="form-control" style="font-size: large">
+                                                <option>獨居</option>
+                                                <option>與親友同住</option>
+                                                <option>機構</option>
+                                                <option>其它</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">吸菸習慣：</span></label>
+                                            <select class="form-control" style="font-size: large">
+                                                <option>有</option>
+                                                <option>無</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">飲酒習慣：</span></label>
+                                            <select class="form-control" style="font-size: large">
+                                                <option>有</option>
+                                                <option>無</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">運動習慣(一週至少3次，每次30分鐘)：</span></label>
+                                            <select class="form-control" style="font-size: large">
+                                                <option>有</option>
+                                                <option>無</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">備註：</span></label>
+                                            <textarea class="form-control" rows="3" style="font-size: large"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (基本資料) -->
+                                <div class="col-lg-6">
+                                    <h1>病史</h1>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">是否有下列病史：</span></label>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value=""><span class="auto-style1">高血壓〈130/80mmHg以上〉</span>
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value=""><span class="auto-style1">高血糖〈糖化血色素HbA1C>7%以上〉</span>
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value=""><span class="auto-style1">低密度脂蛋白過高〈LDL>130mg/dl〉</span>
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value=""><span class="auto-style1">高膽固醇〈總膽固醇CHOL>1820mg/dl〉</span>
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value=""><span class="auto-style1">高三酸甘油脂〈TG>150mg/dl〉</span>
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value=""><span class="auto-style1">高尿酸〈UA>8mg/dl〉</span>
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value=""><span class="auto-style1">無</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">是否接受過糖尿病教育：</span></label>
+                                            <select class="form-control" style="font-size: large">
+                                                <option>是</option>
+                                                <option>否</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">家裡是否有自備血糖機：</span></label>
+                                            <select class="form-control" style="font-size: large">
+                                                <option>是</option>
+                                                <option>否</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><span class="auto-style1">平常用藥習慣：</span></label>
+                                            <select class="form-control" style="font-size: large">
+                                                <option>西醫〈診所或醫院〉處方用藥</option>
+                                                <option>中醫〈診所或醫院〉</option>
+                                                <option>傳統偏方草藥</option>
+                                                <option>藥局買成藥〈例：止痛藥或感冒液〉</option>
+                                                <option>第四台或電台廣告藥</option>
+                                                <option>其它</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (病史) -->
+                                <div class="col-lg-6">
+                                    <h1>檢驗資訊</h1>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><span class="auto-style1">身高：</span></label>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" style="font-size: large" placeholder="Cm">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><span class="auto-style1">體重：</span></label>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" style="font-size: large" placeholder="Kg">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><span class="auto-style1">腰圍：</span></label>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" style="font-size: large" placeholder="Cm">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><span class="auto-style1">血壓：</span></label>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" style="font-size: large" placeholder="mmHg">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><span class="auto-style1">飯前血糖〈AC Sugar〉：</span></label>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><span class="auto-style1">糖化血色素〈HbA1C〉：</span></label>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><span class="auto-style1">尿素氮〈BUN〉：</span></label>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" style="font-size: large" placeholder="mg/gm">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><span class="auto-style1">肌酸酐〈Creatinine〉：</span></label>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><span class="auto-style1">腎絲球過濾率〈eGFR〉：</span></label>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" style="font-size: large" placeholder="MDRD">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><span class="auto-style1">總膽固醇〈TCH〉：</span></label>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><span class="auto-style1">三酸甘油脂〈TG〉：</span></label>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><span class="auto-style1">低密度脂蛋白〈LDL〉：</span></label>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><span class="auto-style1">蛋白尿〈UACR〉：</span></label>
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (檢驗資料) -->
+
+                                <div class="col-lg-12">
+                                    <form role="form">
+                                        <br>
+                                        <br>
+                                        <button type="submit" class="btn btn-outline btn-primary btn-lg btn-block">填寫完成</button>
+                                        <br>
+                                        <button type="reset" class="btn btn-outline btn-primary btn-lg btn-block">重新填寫</button>
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-12 (按鈕) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>

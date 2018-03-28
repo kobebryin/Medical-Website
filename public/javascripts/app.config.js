@@ -1,4 +1,4 @@
-angular.module('TinYi').config(function($stateProvider, $urlRouterProvider) {
+angular.module('Medical Website').config(function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /
   $urlRouterProvider.otherwise("/");

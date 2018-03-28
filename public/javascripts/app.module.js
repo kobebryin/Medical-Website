@@ -1,1 +1,1 @@
-angular.module('TinYi', ['ui.router']);
+angular.module('Medical Website', ['ui.router']);
