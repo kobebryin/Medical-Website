@@ -21,130 +21,100 @@
                                         <label>
                                             <span class="auto-style1">收案日期：</span>
                                         </label>
-                                        <input class="form-control" style="font-size: large" placeholder="格式範例：20170101">
+                                        <input class="form-control" ng-model="form.BeginTime" style="font-size: large" placeholder="格式範例：20170101">
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">個案班級：</span>
                                         </label>
-                                        <input class="form-control" style="font-size: large" placeholder="格式範例：A班則填入A即可">
+                                        <input class="form-control" ng-model="form.Class_Name" style="font-size: large" placeholder="格式範例：A班則填入A即可">
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">姓名：</span>
                                         </label>
-                                        <input class="form-control" style="font-size: large" placeholder="請輸入中文姓名">
+                                        <input class="form-control" ng-model="form.Clinic_Name" style="font-size: large" placeholder="請輸入中文姓名">
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">病歷編號：</span>
                                         </label>
-                                        <input class="form-control" style="font-size: large" placeholder="請輸入病歷號碼">
+                                        <input class="form-control" ng-model="form.Clinic_No" style="font-size: large" placeholder="請輸入病歷號碼">
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">性別：</span>
                                         </label>
-                                        <select class="form-control" style="font-size: large">
-                                            <option>男</option>
-                                            <option>女</option>
+                                        <select class="form-control" ng-model="form.Gender" ng-init="form.Gender = genders[0].value"  style="font-size: large" ng-options="gender.value as gender.name for gender in genders"> 
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">年齡：</span>
                                         </label>
-                                        <input class="form-control" style="font-size: large" placeholder="請輸入實歲年齡">
+                                        <input class="form-control" ng-model="form.Age" style="font-size: large" placeholder="請輸入實歲年齡">
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">宗教信仰：</span>
                                         </label>
-                                        <select class="form-control" style="font-size: large">
-                                            <option>佛教</option>
-                                            <option>回教</option>
-                                            <option>基督教</option>
-                                            <option>天主教</option>
-                                            <option>道教或燒香、拜拜民間傳統信仰</option>
-                                            <option>其它</option>
+                                        <select class="form-control" ng-model="form.Religion" ng-init="form.Religion = religions[0].value" style="font-size: large" ng-options="religion.value as religion.name for religion in religions">
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">教育程度：</span>
                                         </label>
-                                        <select class="form-control" style="font-size: large">
-                                            <option>不識字</option>
-                                            <option>小學</option>
-                                            <option>國中</option>
-                                            <option>高中職或專科</option>
-                                            <option>大學</option>
-                                            <option>研究所暨以上</option>
+                                        <select class="form-control" ng-model="form.Education" ng-init="form.Education = educations[0].value" style="font-size: large" ng-options="education.value as education.name for education in educations">
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">婚姻狀況：</span>
                                         </label>
-                                        <select class="form-control" style="font-size: large">
-                                            <option>未婚</option>
-                                            <option>已婚</option>
-                                            <option>離婚</option>
-                                            <option>喪偶</option>
+                                        <select class="form-control"  ng-model="form.MaritalStatus" ng-init="form.MaritalStatus = maritalStatus[0].value" style="font-size: large" ng-options="maritalStatu.value as maritalStatu.name for maritalStatu in maritalStatus">
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">目前就業：</span>
                                         </label>
-                                        <select class="form-control" style="font-size: large">
-                                            <option>有</option>
-                                            <option>無</option>
+                                        <select class="form-control" ng-model="form.JobStatus"  ng-init="form.JobStatus = jobStatus[0].value" style="font-size: large" ng-options="jobStatu.value as jobStatu.name for jobStatu in jobStatus">
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">居住狀況：</span>
                                         </label>
-                                        <select class="form-control" style="font-size: large">
-                                            <option>獨居</option>
-                                            <option>與親友同住</option>
-                                            <option>機構</option>
-                                            <option>其它</option>
+                                        <select class="form-control" ng-model="form.ResidentSituation"  ng-init="form.ResidentSituation = residentSituations[0].value" style="font-size: large" ng-options="residentSituation.value as residentSituation.name for residentSituation in residentSituations">
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">吸菸習慣：</span>
                                         </label>
-                                        <select class="form-control" style="font-size: large">
-                                            <option>有</option>
-                                            <option>無</option>
+                                        <select class="form-control" ng-model="form.SmokingHabits"  ng-init="form.SmokingHabits = smokingHabits[0].value" style="font-size: large" ng-options="smokingHabit.value as smokingHabit.name for smokingHabit in smokingHabits">
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">飲酒習慣：</span>
                                         </label>
-                                        <select class="form-control" style="font-size: large">
-                                            <option>有</option>
-                                            <option>無</option>
+                                        <select class="form-control" ng-model="form.DrinkHabits"  ng-init="form.DrinkHabits = drinkHabits[0].value" style="font-size: large" ng-options="drinkHabit.value as drinkHabit.name for drinkHabit in drinkHabits">
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">運動習慣(一週至少3次，每次30分鐘)：</span>
                                         </label>
-                                        <select class="form-control" style="font-size: large">
-                                            <option>有</option>
-                                            <option>無</option>
+                                        <select class="form-control" ng-model="form.SportsHabits" ng-init="form.SportsHabits = sportsHabits[0].value" style="font-size: large" ng-options="sportsHabit.value as sportsHabit.name for sportsHabit in sportsHabits">
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             <span class="auto-style1">備註：</span>
                                         </label>
-                                        <textarea class="form-control" rows="3" style="font-size: large"></textarea>
+                                        <textarea class="form-control" ng-model="form.Remark" rows="3" style="font-size: large"></textarea>
                                     </div>
                                 </form>
                             </div>

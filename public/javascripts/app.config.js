@@ -7,13 +7,13 @@ angular.module('Medical Website').config(function($stateProvider, $urlRouterProv
   $stateProvider
     .state('index', {
       url: "/",
-      templateUrl: "views/index.html"/*,
-      controller: "IndexController"*/
+      templateUrl: "views/index.html",
+      controller: "IndexController"
     })
     .state('write_caseinfo', {
       url: "/write_caseinfo",
-      templateUrl: "views/write_caseinfo.html"/*,
-      controller: "IndexController"*/
+      templateUrl: "views/write_caseinfo.html",
+      controller: "write_caseinfoController"
     })
     .state('read_caseinfo', {
       url: "/read_caseinfo",
