@@ -2,19 +2,14 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var mysql = require('mysql');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 //var users = require('./routes/users');
 /** -----  database MySql api routes  -----*/
-var bbsapi = require('./routes/bbsApi');
-var dishapi = require('./routes/dishApi');
-var dishlistapi = require('./routes/dishlistApi');
-var fieldvalueapi = require('./routes/fieldvalueApi');
-var mealapi = require('./routes/mealApi');
-var memberapi = require('./routes/memberApi');
-var routeapi = require('./routes/routeApi');
+var write_caseinfoApi = require('./routes/write_caseinfoAPI');
 
 var app = express();
 
@@ -30,15 +25,32 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/** -------------------------connect MySQL-----------------------START----- */
+var connection = mysql.createConnection({
+  host: 'tingyinas.myqnapcloud.com',
+  user: 'kobebryin',
+  password: 'ilove5205><',
+  database: 'testMedical'
+});
+
+connection.connect(function (err) {
+  if (err) {
+      console.error('error connecting: ' + err.stack);
+      return;
+  }
+  console.log('connected as id ' + connection.threadId);
+});
+
+/* Add MySQL connection into req.dbConnection Object */
+app.use(function (req, res, next) {
+  req.dbConnection = connection;
+  next();
+});
+/** -------------------------connect MySQL-----------------------END------ */
+
 app.use('/', index);
 /** -----  database MySql api routes  -----*/
-app.use('/bbs', bbsapi);
-app.use('/dish', dishapi);
-app.use('/dishlist', dishlistapi);
-app.use('/fieldvalue',fieldvalueapi);
-app.use('/meal',mealapi);
-app.use('/member', memberapi);
-app.use('/route', routeapi);
+app.use('/write_caseinfoApi', write_caseinfoApi);
 //app.use('/users', users);
 
 // catch 404 and forward to error handler

@@ -1,14 +1,14 @@
-angular.module('Medical Website').controller('write_caseinfoController', function ($rootScope, $scope) {
+angular.module('Medical Website').controller('write_caseinfoController', function ($rootScope, $scope, write_caseinfoService) {
 
     /**
      * Author : Jimmy Liang
      * Date : 2018/03/28
      */
 
-    /*   Variables of dropdown list elements array setting  */
+    /* ---START---  Variables of dropdown list elements array setting --- */
     // MedicalHistory checkbox
     $scope.MedicalHistory = [
-        { name: '高血壓〈130/80mmHg以上〉', value: 'HTN', selected: false},
+        { name: '高血壓〈130/80mmHg以上〉', value: 'HTN', selected: false },
         { name: '高血糖〈糖化血色素HbA1C>7%以上〉', value: 'HGA', selected: false },
         { name: '低密度脂蛋白過高〈LDL>130mg/dl〉', value: 'LDL', selected: false },
         { name: '高膽固醇〈總膽固醇CHOL>1820mg/dl〉', value: 'CHOL', selected: false },
@@ -19,7 +19,7 @@ angular.module('Medical Website').controller('write_caseinfoController', functio
 
     // Watch MedicalHistory checkbox for changes
     $scope.$watch('MedicalHistory|filter:{selected:true}', function (nv) {
-        $scope.form.MedicalHistory = nv.map(function (medicalHistory_selection) {
+        $scope.MedicalHistorySelected = nv.map(function (medicalHistory_selection) {
             return medicalHistory_selection.value;
         });
     }, true);
@@ -122,7 +122,7 @@ angular.module('Medical Website').controller('write_caseinfoController', functio
         DrinkHabits: null,
         SportsHabits: null,
         Remark: null,
-        MedicalHistory: [],
+        MedicalHistory: null,
         DiabetesEducation: null,
         Blood_GlucoseMachine: null,
         MedicationHabits: null,
@@ -138,8 +138,70 @@ angular.module('Medical Website').controller('write_caseinfoController', functio
         TCH: null,
         TG: null,
         LDL: null,
-        UACR: null
+        UACR: null,
+        ModifiedDate: null,
+        ModifiedBy: null
     };
 
+    /* ---START--- Button's click events zone --- */
+    //submit button's click listener
+    $scope.submit = function () {
+        $.LoadingOverlay('show');
+        $scope.form.MedicalHistory = $scope.MedicalHistorySelected.toString();  //convert MedicalHistory's checkbox selected array to string( use "," to split it) 
+        
+        //insert system's datetime into scope.form.ModifiedDate
+        var Today = new Date(); //initialize Date Object. 
+        $scope.form.ModifiedDate = Today.getFullYear() + '-' + (Today.getMonth() + 1) + '-' + Today.getDate() + " " + Today.getHours() + ":" + Today.getMinutes() + ":" + Today.getSeconds();
+        
+        //call the post data api
+        write_caseinfoService.postCaseInfoData($scope.form, function (data) {
+            console.log(data); //log the api post status
+            $.LoadingOverlay('hide');
+        });
+    };
+
+    //clear button's click listener
+    $scope.clear = function () {
+        //make form object be initial
+        $scope.form = {
+            BeginTime: null,
+            Class_Name: null,
+            Clinic_Name: null,
+            Clinic_No: null,
+            Gender: '1',
+            Age: null,
+            Religion: 'Buddhism',
+            Education: '0',
+            MaritalStatus: 'Single',
+            JobStatus: 'Y',
+            ResidentSituation: 'A',
+            SmokingHabits: 'Y',
+            DrinkHabits: 'Y',
+            SportsHabits: 'Y',
+            Remark: null,
+            MedicalHistory: null,
+            DiabetesEducation: 'Y',
+            Blood_GlucoseMachine: 'Y',
+            MedicationHabits: 'W',
+            Height: null,
+            Weight: null,
+            Waist: null,
+            tension: null,
+            ACSugar: null,
+            HbA1C: null,
+            BUN: null,
+            Creatinine: null,
+            eGFR: null,
+            TCH: null,
+            TG: null,
+            LDL: null,
+            UACR: null
+        };
+
+        //also make MedicalHistory checkbox initial
+        for (var i in $scope.MedicalHistory) {
+            $scope.MedicalHistory[i].selected = false;
+        }
+    };
 
 });
