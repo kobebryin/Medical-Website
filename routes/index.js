@@ -9,8 +9,11 @@ router.get('/', function (req, res, next) {
 router.get('/test', function (req, res, next) {
   res.render('test',
     {
-      title: 'Express', 
-      content: 'Hello World !'
+      title: 'Website Info.', 
+      content:  'Enter Website',
+      NAME: 'Web Developer : Jimmy Liang',
+      DATE: 'Date: 2018.03.31',
+      CONTACT: 'Em@il: kobebryin@gmail.com'
     });
 });
 
