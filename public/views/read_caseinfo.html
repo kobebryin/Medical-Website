@@ -38,24 +38,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="odd gradeX">
-                                    <td class="auto-style1">052216001</td>
-                                    <td class="auto-style2">王曉明</td>
-                                    <td>A</td>
-                                    <td>男</td>
-                                    <td>24</td>
-                                    <td>大學</td>
-                                    <td>未婚</td>
-                                    <td>有</td>
-                                    <td class="auto-style3">與親友同住</td>
-                                    <td>有</td>
-                                    <td>有</td>
-                                    <td>無</td>
-                                    <td class="auto-style4">西醫(診所或醫院)處方用藥</td>
-                                    <td>高血壓</td>
-                                    <td class="auto-style5">否</td>
-                                    <td>否</td>
-                                    <td></td>
+                                <tr class="odd gradeX" ng-repeat="caseinfoData in caseinfoDatas">
+                                    <td>{{caseinfoData.Clinic_No}}</td>
+                                    <td>{{caseinfoData.Clinic_Name}}</td>
+                                    <td>{{caseinfoData.Class_Name}}</td>
+                                    <td>{{caseinfoData.Gender}}</td>
+                                    <td>{{caseinfoData.Age}}</td>
+                                    <td>{{caseinfoData.Education}}</td>
+                                    <td>{{caseinfoData.MaritalStatus}}</td>
+                                    <td>{{caseinfoData.JobStatus}}</td>
+                                    <td>{{caseinfoData.ResidentSituation}}</td>
+                                    <td>{{caseinfoData.SmokingHabits}}</td>
+                                    <td>{{caseinfoData.DrinkHabits}}</td>
+                                    <td>{{caseinfoData.SportsHabits}}</td>
+                                    <td>{{caseinfoData.MedicationHabits}}</td>
+                                    <td>{{caseinfoData.MedicalHistory}}</td>
+                                    <td>{{caseinfoData.DiabetesEducation}}</td>
+                                    <td>{{caseinfoData.BloodGlucoseMachine}}</td>
+                                    <td>{{caseinfoData.Remark}}</td>
+                                    <!-- <td class="center">{{typeMappingForDataTables[members.Type].name}}</td> -->
                                 </tr>
                             </tbody>
                         </table>

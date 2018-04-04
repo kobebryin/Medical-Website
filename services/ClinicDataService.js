@@ -1,4 +1,4 @@
-//InsertCustomData SQL insert query code
+//Insert CustomData SQL insert query code
 function InsertCustomData(req, callback) {
     req.dbConnection.query("INSERT INTO CustomData (Clinic_No, Clinic_Name, Class_Name, Gender, Age, Religion, Education, MaritalStatus, JobStatus, ResidentSituation, SmokingHabits, DrinkHabits, SportsHabits, DiabetesEducation, BloodGlucoseMachine, MedicationHabits, MedicalHistory, Remark, BeginTime, ModifiedDate, ModifiedBy) VALUES ("
         + '?' + ", "
@@ -28,7 +28,7 @@ function InsertCustomData(req, callback) {
         });
 }
 
-//InsertInspectionData SQL insert query code
+//Insert InspectionData SQL insert query code
 function InsertInspectionData(req, callback) {
     req.dbConnection.query("INSERT INTO InspectionData (Clinic_No, Height, Weight, Waist, tension, ACSugar, HbA1C, BUN, Creatinine, eGFR, TCH, TG, LDL, UACR, ModifiedDate, ModifiedBy) VALUES ("
         + '?' + ", "
@@ -53,8 +53,18 @@ function InsertInspectionData(req, callback) {
         });
 }
 
+//Get CustomData SQL query code
+function GetCustomData(req, callback) {
+    req.dbConnection.query('SELECT * FROM CustomData;', function (error, results, fields) {
+        if (error) throw error;
+        console.log('The solution is: ', results);
+        callback(results);
+    });
+};
+
 //export module then you can call this js file's function
 module.exports = {
     InsertCustomData: InsertCustomData, 
-    InsertInspectionData: InsertInspectionData
+    InsertInspectionData: InsertInspectionData,
+    GetCustomData: GetCustomData
 };
