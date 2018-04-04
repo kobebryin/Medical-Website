@@ -146,21 +146,17 @@ angular.module('Medical Website').controller('write_caseinfoController', functio
     /* ---START--- Button's click events zone --- */
     //submit button's click listener
     $scope.submit = function () {
-        $.LoadingOverlay('show');
+        $.LoadingOverlay('show');   //show the loadingoverlay...
         $scope.form.MedicalHistory = $scope.MedicalHistorySelected.toString();  //convert MedicalHistory's checkbox selected array to string( use "," to split it) 
 
         //insert system's datetime into scope.form.ModifiedDate
         var Today = new Date(); //initialize Date Object. 
         $scope.form.ModifiedDate = Today.getFullYear() + '-' + (Today.getMonth() + 1) + '-' + Today.getDate() + " " + Today.getHours() + ":" + Today.getMinutes() + ":" + Today.getSeconds();
 
-        //call the post CustomData data api
+        //call the post CustomData & InspectionData data api
         write_caseinfoService.postCaseInfoData($scope.form, function (data) {
             console.log(data); //log the api post status
-            //call the post InspectionData data api
-            write_caseinfoService.postCaseInfoDataByInspectionData($scope.form, function (data) {
-                console.log(data); //log the api post status
-                $.LoadingOverlay('hide');
-            });
+            $.LoadingOverlay('hide');   //when post finished then hide the loadingoverlay...
         });
     };
 
