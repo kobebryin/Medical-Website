@@ -30,10 +30,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /** -------------------------connect MySQL-----------------------START----- */
 var connection = mysql.createConnection({
-  host: 'tingyinas.myqnapcloud.com',
-  user: 'kobebryin',
-  password: 'ilove5205><',
-  database: 'testMedical'
+  host: '127.0.0.1',
+  user: 'root',
+  password: 'vivi0304abc',
+  database: 'testmedical'
 });
 
 connection.connect(function (err) {
