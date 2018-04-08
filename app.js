@@ -11,6 +11,7 @@ var index = require('./routes/index');
 /** -----  database MySql api routes  -----*/
 var write_caseinfoApi = require('./routes/write_caseinfoAPI');
 var read_caseinfoApi = require('./routes/read_caseinfoAPI');
+var write_casedataApi = require('./routes/write_casedataAPI');
 
 
 var app = express();
@@ -54,6 +55,7 @@ app.use('/', index);
 /** -----  database MySql api routes  -----*/
 app.use('/write_caseinfoApi', write_caseinfoApi);
 app.use('/read_caseinfoApi', read_caseinfoApi);
+app.use('/write_casedataApi', write_casedataApi);
 //app.use('/users', users);
 
 // catch 404 and forward to error handler

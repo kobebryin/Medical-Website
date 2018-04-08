@@ -22,7 +22,7 @@
                                             <span class="auto-style1">病歷編號：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="請輸入病歷號碼">
+                                            <input class="form-control" ng-model="form.Clinic_No" type="text" style="font-size: large" placeholder="請輸入病歷號碼">
                                             <br>
                                         </div>
                                     </div>
@@ -31,7 +31,7 @@
                                             <span class="auto-style1">姓名：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="請輸入中文姓名">
+                                            <input class="form-control" ng-model="form.Clinic_Name" type="text" style="font-size: large" placeholder="請輸入中文姓名">
                                             <br>
                                         </div>
                                     </div>
@@ -40,7 +40,7 @@
                                             <span class="auto-style1">個案班級：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" style="font-size: large" placeholder="格式範例：A班則填入A即可">
+                                            <input class="form-control" ng-model="form.Class_Name" style="font-size: large" placeholder="格式範例：A班則填入A即可">
                                             <br>
                                         </div>
                                     </div>
@@ -49,7 +49,7 @@
                                             <span class="auto-style1">身高：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="Cm">
+                                            <input class="form-control" ng-model="form.Height" type="text" style="font-size: large" placeholder="Cm">
                                             <br>
                                         </div>
                                     </div>
@@ -58,7 +58,7 @@
                                             <span class="auto-style1">體重：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="Kg">
+                                            <input class="form-control" ng-model="form.Weight" type="text" style="font-size: large" placeholder="Kg">
                                             <br>
                                         </div>
                                     </div>
@@ -67,7 +67,7 @@
                                             <span class="auto-style1">腰圍：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="Cm">
+                                            <input class="form-control" ng-model="form.Waist" type="text" style="font-size: large" placeholder="Cm">
                                             <br>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                                             <span class="auto-style1">血壓：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="mmHg">
+                                            <input class="form-control" ng-model="form.tension" type="text" style="font-size: large" placeholder="mmHg">
                                             <br>
                                         </div>
                                     </div>
@@ -85,7 +85,7 @@
                                             <span class="auto-style1">飯前血糖〈AC Sugar〉：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            <input class="form-control" ng-model="form.ACSugar" type="text" style="font-size: large" placeholder="mg/dl">
                                             <br>
                                         </div>
                                     </div>
@@ -94,7 +94,7 @@
                                             <span class="auto-style1">糖化血色素〈HbA1C〉：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            <input class="form-control" ng-model="form.HbA1C" type="text" style="font-size: large" placeholder="mg/dl">
                                             <br>
                                         </div>
                                     </div>
@@ -103,7 +103,7 @@
                                             <span class="auto-style1">尿素氮〈BUN〉：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="mg/gm">
+                                            <input class="form-control" ng-model="form.BUN" type="text" style="font-size: large" placeholder="mg/gm">
                                             <br>
                                         </div>
                                     </div>
@@ -112,7 +112,7 @@
                                             <span class="auto-style1">肌酸酐〈Creatinine〉：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            <input class="form-control" ng-model="form.Creatinine" type="text" style="font-size: large" placeholder="mg/dl">
                                             <br>
                                         </div>
                                     </div>
@@ -121,7 +121,7 @@
                                             <span class="auto-style1">腎絲球過濾率〈eGFR〉：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="MDRD">
+                                            <input class="form-control" ng-model="form.eGFR" type="text" style="font-size: large" placeholder="MDRD">
                                             <br>
                                         </div>
                                     </div>
@@ -130,7 +130,7 @@
                                             <span class="auto-style1">總膽固醇〈TCH〉：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            <input class="form-control" ng-model="form.TCH" type="text" style="font-size: large" placeholder="mg/dl">
                                             <br>
                                         </div>
                                     </div>
@@ -139,7 +139,7 @@
                                             <span class="auto-style1">三酸甘油脂〈TG〉：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            <input class="form-control" ng-model="form.TG" type="text" style="font-size: large" placeholder="mg/dl">
                                             <br>
                                         </div>
                                     </div>
@@ -148,7 +148,7 @@
                                             <span class="auto-style1">低密度脂蛋白〈LDL〉：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            <input class="form-control" ng-model="form.LDL" type="text" style="font-size: large" placeholder="mg/dl">
                                             <br>
                                         </div>
                                     </div>
@@ -157,7 +157,7 @@
                                             <span class="auto-style1">蛋白尿〈UACR〉：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="mg/dl">
+                                            <input class="form-control" ng-model="form.UACR" type="text" style="font-size: large" placeholder="mg/dl">
                                         </div>
                                     </div>
                                 </form>
@@ -168,9 +168,9 @@
                                 <form role="form">
                                     <br>
                                     <br>
-                                    <button type="submit" class="btn btn-outline btn-primary btn-lg btn-block">填寫完成</button>
+                                    <button type="submit" ng-click="submit()" class="btn btn-outline btn-primary btn-lg btn-block">填寫完成</button>
                                     <br>
-                                    <button type="reset" class="btn btn-outline btn-primary btn-lg btn-block">重新填寫</button>
+                                    <button type="reset" ng-click="clear()" class="btn btn-outline btn-primary btn-lg btn-block">重新填寫</button>
                                 </form>
                             </div>
                             <!-- /.col-lg-12 (按鈕) -->
