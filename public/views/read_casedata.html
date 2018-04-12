@@ -19,44 +19,50 @@
                         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th class="auto-style6">病歷編號</th>
-                                    <th class="auto-style7">姓名</th>
+                                    <th>病歷編號</th>
+                                    <th>姓名</th>
                                     <th>班級</th>
                                     <th>身高</th>
                                     <th>體重</th>
                                     <th>腰圍</th>
-                                    <th>血壓</th>
+                                    <th>收縮壓</th>
+                                    <th>舒張壓</th>
                                     <th>AC Sugar</th>
                                     <th>HbA1C</th>
                                     <th>BUN</th>
                                     <th>Creatinine</th>
                                     <th>eGFR</th>
+                                    <th>期別</th>
                                     <th>TCH</th>
                                     <th>TG</th>
                                     <th>LDL</th>
                                     <th>UACR</th>
-                                    <th>時間</th>
+                                    <th>UR</th>
+                                    <th>檢驗時間</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="odd gradeX">
-                                    <td class="auto-style6">052216001</td>
-                                    <td class="auto-style7">王曉明</td>
-                                    <td>A</td>
-                                    <td>174</td>
-                                    <td>68</td>
-                                    <td>32</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr class="odd gradeX" ng-repeat="casenumData in casenumDatas">
+                                    <td>{{casenumData.Clinic_No}}</td>
+                                    <td>{{casenumData.Clinic_Name}}</td>
+                                    <td>{{casenumData.Class_Name}}</td>
+                                    <td>{{casenumData.Height}}</td>
+                                    <td>{{casenumData.Weight}}</td>
+                                    <td>{{casenumData.Waist}}</td>
+                                    <td>{{casenumData.SBP}}</td>
+                                    <td>{{casenumData.DBP}}</td>
+                                    <td>{{casenumData.ACSugar}}</td>
+                                    <td>{{casenumData.HbA1C}}</td>
+                                    <td>{{casenumData.BUN}}</td>
+                                    <td>{{casenumData.Creatinine}}</td>
+                                    <td>{{casenumData.eGFR}}</td>
+                                    <td>{{casenumData.stage}}</td>
+                                    <td>{{casenumData.TCH}}</td>
+                                    <td>{{casenumData.TG}}</td>
+                                    <td>{{casenumData.LDL}}</td>
+                                    <td>{{casenumData.UACR}}</td>
+                                    <td>{{casenumData.UR}}</td>
+                                    <td>{{casenumData.Inspectionday}}</td>
                                 </tr>
 
                             </tbody>

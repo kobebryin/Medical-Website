@@ -27,8 +27,8 @@ angular.module('Medical Website').config(function($stateProvider, $urlRouterProv
     })
     .state('read_casedata', {
       url: "/read_casedata",
-      templateUrl: "views/read_casedata.html"/*,
-      controller: "IndexController"*/
+      templateUrl: "views/read_casedata.html",
+      controller: "read_casedataController"
     })
     .state('write_careinfo', {
       url: "/write_careinfo",

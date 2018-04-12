@@ -12,6 +12,7 @@ var index = require('./routes/index');
 var write_caseinfoApi = require('./routes/write_caseinfoAPI');
 var read_caseinfoApi = require('./routes/read_caseinfoAPI');
 var write_casedataApi = require('./routes/write_casedataAPI');
+var read_casedataApi = require('./routes/read_casedataAPI');
 
 
 var app = express();
@@ -30,10 +31,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /** -------------------------connect MySQL-----------------------START----- */
 var connection = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root',
-  password: 'vivi0304abc',
-  database: 'testmedical'  
+  // host: '127.0.0.1',
+  // user: 'root',
+  // password: 'vivi0304abc',
+  // database: 'testmedical'  
+  host: 'tingyinas.myqnapcloud.com',
+  user: 'kobebryin',
+  password: 'ilove5205><',
+  database: 'testMedical'
 });
 
 connection.connect(function (err) {
@@ -56,6 +61,7 @@ app.use('/', index);
 app.use('/write_caseinfoApi', write_caseinfoApi);
 app.use('/read_caseinfoApi', read_caseinfoApi);
 app.use('/write_casedataApi', write_casedataApi);
+app.use('/read_casedataApi', read_casedataApi);
 //app.use('/users', users);
 
 // catch 404 and forward to error handler

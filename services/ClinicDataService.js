@@ -30,7 +30,7 @@ function InsertCustomData(req, callback) {
 
 //Insert InspectionData SQL insert query code
 function InsertInspectionData(req, callback) {
-    req.dbConnection.query("INSERT INTO InspectionData (Clinic_No, Height, Weight, Waist, tension, ACSugar, HbA1C, BUN, Creatinine, eGFR, TCH, TG, LDL, UACR, ModifiedDate, ModifiedBy) VALUES ("
+    req.dbConnection.query("INSERT INTO InspectionData (Clinic_No,Clinic_Name,Class_Name,Inspectionday, Height, Weight, Waist, SBP, DBP, ACSugar, HbA1C, BUN, Creatinine, eGFR, stage,TCH, TG, LDL, UACR, UR, ModifiedDate, ModifiedBy) VALUES ("
         + '?' + ", "
         + '?' + ", "
         + '?' + ", "
@@ -46,7 +46,13 @@ function InsertInspectionData(req, callback) {
         + '?' + ", "
         + '?' + ", "
         + '?' + ", "
-        + '?' + ");", [req.body.Clinic_No, req.body.Height, req.body.Weight, req.body.Waist, req.body.tension, req.body.ACSugar, req.body.HbA1C, req.body.BUN, req.body.Creatinine, req.body.eGFR, req.body.TCH, req.body.TG, req.body.LDL, req.body.UACR, req.body.ModifiedDate, req.body.ModifiedBy], function (error, results, fields) {
+        + '?' + ", "
+        + '?' + ", "
+        + '?' + ", "
+        + '?' + ", "
+        + '?' + ", "
+        + '?' + ", "
+        + '?' + ");", [req.body.Clinic_No,req.body.Clinic_Name,req.body.Class_Name,req.body.Inspectionday, req.body.Height, req.body.Weight, req.body.Waist, req.body.SBP, req.body.DBP, req.body.ACSugar, req.body.HbA1C, req.body.BUN, req.body.Creatinine, req.body.eGFR, req.body.Stage, req.body.TCH, req.body.TG, req.body.LDL, req.body.UACR, req.body.UR, req.body.ModifiedDate, req.body.ModifiedBy], function (error, results, fields) {
             if (error) throw error;
             console.log('The solution is: ', results);
             callback(results);
