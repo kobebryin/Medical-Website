@@ -1,4 +1,10 @@
 //Insert InspectionData SQL insert query code
+
+/**
+* Author : Jimmy Liang
+* Date : 2018/04/23
+*/
+
 function InsertInspectionData(req, callback) {
     req.dbConnection.query("INSERT INTO InspectionData (Clinic_No,Clinic_Name,Class_Name,Inspectionday, Height, Weight, Waist, SBP, DBP, ACSugar, HbA1C, BUN, Creatinine, eGFR, stage,TCH, TG, LDL, UACR, UR, ModifiedDate, ModifiedBy) VALUES ("
         + '?' + ", "

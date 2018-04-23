@@ -1,4 +1,10 @@
 angular.module('Medical Website').config(function($stateProvider, $urlRouterProvider) {
+
+  /**
+    * Author : Jimmy Liang
+    * Date : 2018/03/28
+    */
+
   //
   // For any unmatched url, redirect to /
   $urlRouterProvider.otherwise("/");
@@ -32,13 +38,13 @@ angular.module('Medical Website').config(function($stateProvider, $urlRouterProv
     })
     .state('write_careinfo', {
       url: "/write_careinfo",
-      templateUrl: "views/write_careinfo.html"/*,
-      controller: "IndexController"*/
+      templateUrl: "views/write_careinfo.html",
+      controller: "write_careinfoController"
     })
     .state('read_careinfo', {
       url: "/read_careinfo",
-      templateUrl: "views/read_careinfo.html"/*,
-      controller: "IndexController"*/
+      templateUrl: "views/read_careinfo.html",
+      controller: "read_careinfoController"
     })
     .state('read_daycareinfo', {
       url: "/read_daycareinfo",
@@ -47,13 +53,13 @@ angular.module('Medical Website').config(function($stateProvider, $urlRouterProv
     })
     .state('write_endinfo', {
       url: "/write_endinfo",
-      templateUrl: "views/write_endinfo.html"/*,
-      controller: "IndexController"*/
+      templateUrl: "views/write_endinfo.html",
+      controller: "write_endinfoController"
     })
     .state('read_endinfo', {
       url: "/read_endinfo",
-      templateUrl: "views/read_endinfo.html"/*,
-      controller: "IndexController"*/
+      templateUrl: "views/read_endinfo.html",
+      controller: "read_endinfoController"
     });
 
 });

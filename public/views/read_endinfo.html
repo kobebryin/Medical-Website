@@ -20,20 +20,18 @@
                                 <tr>
                                     <th>病歷編號</th>
                                     <th>姓名</th>
-                                    <th>班級</th>
                                     <th>收案日期</th>
                                     <th>結案日期</th>
                                     <th>結案原因</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="odd gradeX">
-                                    <td>052216001</td>
-                                    <td>王曉明</td>
-                                    <td>A</td>
-                                    <td>20170305</td>
-                                    <td>20170315</td>
-                                    <td>已治療完成</td>
+                                <tr class="odd gradeX" ng-repeat="endinfoData in endinfoDatas">
+                                    <td>{{endinfoData.Clinic_No}}</td>
+                                    <td>{{endinfoData.Clinic_Name}}</td>
+                                    <td>{{endinfoData.BeginTime}}</td>
+                                    <td>{{endinfoData.endDate}}</td>
+                                    <td>{{endinfoData.endReason}}</td>
                                 </tr>
 
                             </tbody>

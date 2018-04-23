@@ -2,7 +2,8 @@ angular.module('Medical Website').controller('write_casedataController', functio
     
         /**
          * Author : vivi chou
-         * Date : 2018/04/07
+         * Correction : Jimmy Liang
+         * Date : 2018/04/23
          */
     
         /* ---START---  Variables of dropdown list elements array setting --- */

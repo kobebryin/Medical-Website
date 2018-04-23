@@ -1,3 +1,8 @@
+/**
+* Author : Jimmy Liang
+* Date : 2018/03/28
+*/
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -13,7 +18,10 @@ var write_caseinfoApi = require('./routes/write_caseinfoAPI');
 var read_caseinfoApi = require('./routes/read_caseinfoAPI');
 var write_casedataApi = require('./routes/write_casedataAPI');
 var read_casedataApi = require('./routes/read_casedataAPI');
-
+var write_careinfoApi = require('./routes/write_careinfoAPI');
+var write_endinfoApi = require('./routes/write_endinfoAPI');
+var read_careinfoApi = require('./routes/read_careinfoAPI');
+var read_endinfoApi = require('./routes/read_endinfoAPI');
 
 var app = express();
 
@@ -31,14 +39,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /** -------------------------connect MySQL-----------------------START----- */
 var connection = mysql.createConnection({
-  // host: '127.0.0.1',
-  // user: 'root',
-  // password: 'vivi0304abc',
-  // database: 'testmedical'  
-  host: 'tingyinas.myqnapcloud.com',
-  user: 'kobebryin',
-  password: 'ilove5205><',
-  database: 'testMedical'
+  host: '127.0.0.1',
+  user: 'root',
+  password: 'vivi0304abc',
+  database: 'testmedical'  
 });
 
 connection.connect(function (err) {
@@ -62,6 +66,10 @@ app.use('/write_caseinfoApi', write_caseinfoApi);
 app.use('/read_caseinfoApi', read_caseinfoApi);
 app.use('/write_casedataApi', write_casedataApi);
 app.use('/read_casedataApi', read_casedataApi);
+app.use('/write_careinfoApi', write_careinfoApi);
+app.use('/write_endinfoApi', write_endinfoApi);
+app.use('/read_careinfoApi', read_careinfoApi);
+app.use('/read_endinfoApi', read_endinfoApi);
 //app.use('/users', users);
 
 // catch 404 and forward to error handler

@@ -1,4 +1,4 @@
-angular.module('Medical Website').controller('read_caseinfoController', function ($rootScope, $scope, read_caseinfoService) {
+angular.module('Medical Website').controller('read_endinfoController', function ($rootScope, $scope, read_endinfoService) {
 
     /**
     * Author : Jimmy Liang
@@ -16,8 +16,8 @@ angular.module('Medical Website').controller('read_caseinfoController', function
         $.LoadingOverlay('show');   //show the loadingoverlay...
 
         //call sql api
-        read_caseinfoService.getCaseinfoData(function (data) {
-            $scope.caseinfoDatas = data;    //insert get data into variable
+        read_endinfoService.getEndinfoData(function (data) {
+            $scope.endinfoDatas = data;    //insert get data into variable
 
             //set timeout to let data get first(cause javascripts is asynchronous).
             setTimeout(function () {

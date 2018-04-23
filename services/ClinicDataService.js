@@ -1,4 +1,9 @@
 //Insert CustomData SQL insert query code
+/**
+* Author : Jimmy Liang
+* Date : 2018/04/23
+*/
+
 function InsertCustomData(req, callback) {
     req.dbConnection.query("INSERT INTO CustomData (Clinic_No, Clinic_Name, Class_Name, Gender, Age, Religion, Education, MaritalStatus, JobStatus, ResidentSituation, SmokingHabits, DrinkHabits, SportsHabits, DiabetesEducation, BloodGlucoseMachine, MedicationHabits, MedicalHistory, Remark, BeginTime, ModifiedDate, ModifiedBy) VALUES ("
         + '?' + ", "

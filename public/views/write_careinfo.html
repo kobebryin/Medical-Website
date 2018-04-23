@@ -22,25 +22,16 @@
                                             <span class="auto-style1">病歷編號：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="請輸入病歷號碼">
+                                            <input class="form-control" ng-model="form.Clinic_No" type="text" style="font-size: large" placeholder="請輸入病歷號碼">
                                             <br>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">
-                                            <span class="auto-style1">姓名：</span>
+                                            <span class="auto-style1">病患姓名：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="請輸入中文姓名">
-                                            <br>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">
-                                            <span class="auto-style1">個案班級：</span>
-                                        </label>
-                                        <div class="col-md-8">
-                                            <input class="form-control" style="font-size: large" placeholder="格式範例：A班則填入A即可">
+                                            <input class="form-control" ng-model="form.Clinic_Name" type="text" style="font-size: large" placeholder="請輸入中文姓名">
                                             <br>
                                         </div>
                                     </div>
@@ -49,7 +40,7 @@
                                             <span class="auto-style1">主治醫師：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large">
+                                            <input class="form-control" ng-model="form.Doc_Name" type="text" style="font-size: large">
                                             <br>
                                         </div>
                                     </div>
@@ -58,7 +49,7 @@
                                             <span class="auto-style1">衛教師：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large">
+                                            <input class="form-control" ng-model="form.Doc_Name_2" type="text" style="font-size: large">
                                             <br>
                                         </div>
                                     </div>
@@ -67,7 +58,7 @@
                                             <span class="auto-style1">衛教日期：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="格式範例：20170101">
+                                            <input class="form-control" ng-model="form.EducationDate" type="text" style="font-size: large" placeholder="格式範例：20170101">
                                             <br>
                                         </div>
                                     </div>
@@ -76,10 +67,8 @@
                                             <span class="auto-style1">衛教對象：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <select class="form-control" style="font-size: large">
-                                                <option>本人</option>
-                                                <option>家屬</option>
-                                                <option>其它</option>
+                                            <select class="form-control" ng-model="form.EducationTarget" ng-init="form.EducationTarget = EducationTarget[0].value" style="font-size: large"
+                                                ng-options="EducationTarget.value as EducationTarget.name for EducationTarget in EducationTarget">
                                             </select>
                                             <br>
                                         </div>
@@ -89,11 +78,7 @@
                                             <span class="auto-style1">衛教方式：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <select class="form-control" style="font-size: large">
-                                                <option>個別衛教</option>
-                                                <option>電訪</option>
-                                                <option>團體衛教</option>
-                                                <option>其它</option>
+                                            <select class="form-control" ng-model="form.Method" ng-init="form.Method = Method[0].value" style="font-size: large" ng-options="Method.value as Method.name for Method in Method">
                                             </select>
                                             <br>
                                         </div>
@@ -103,7 +88,7 @@
                                             <span class="auto-style1">藥物使用：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large">
+                                            <input class="form-control" ng-model="form.MedicineUse" type="text" style="font-size: large">
                                             <br>
                                         </div>
                                     </div>
@@ -112,7 +97,7 @@
                                             <span class="auto-style1">住院日期：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="格式範例：20170101">
+                                            <input class="form-control" ng-model="form.AdmissionDate" type="text" style="font-size: large" placeholder="格式範例：20170101">
                                             <br>
                                         </div>
                                     </div>
@@ -121,7 +106,7 @@
                                             <span class="auto-style1">住院原因：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large">
+                                            <input class="form-control" ng-model="form.Reason" type="text" style="font-size: large">
                                             <br>
                                         </div>
                                     </div>
@@ -130,7 +115,7 @@
                                             <span class="auto-style1">出院日期：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="格式範例：20170101">
+                                            <input class="form-control" ng-model="form.DischargeDate" type="text" style="font-size: large" placeholder="格式範例：20170101">
                                             <br>
                                         </div>
                                     </div>
@@ -142,9 +127,9 @@
                                 <form role="form">
                                     <br>
                                     <br>
-                                    <button type="submit" class="btn btn-outline btn-primary btn-lg btn-block">填寫完成</button>
+                                    <button type="submit" ng-click="submit()" class="btn btn-outline btn-primary btn-lg btn-block">填寫完成</button>
                                     <br>
-                                    <button type="reset" class="btn btn-outline btn-primary btn-lg btn-block">重新填寫</button>
+                                    <button type="reset" ng-click="clear()" class="btn btn-outline btn-primary btn-lg btn-block">重新填寫</button>
                                 </form>
                             </div>
                             <!-- /.col-lg-12 (按鈕) -->

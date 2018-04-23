@@ -2,6 +2,11 @@ var express = require('express');
 var router = express.Router();
 var clinicDataService = require('../services/ClinicDataService.js');    //need to require ClinicDataService.js cause have to call the query function
 
+/**
+* Author : Jimmy Liang
+* Date : 2018/04/23
+*/
+
 // // --------  get Data from MySQL's table bbs ----------------------- 
 router.get('/', function (req, res, next) {
     //call InspectionData query function

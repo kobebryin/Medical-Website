@@ -22,25 +22,16 @@
                                             <span class="auto-style1">病歷編號：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="請輸入病歷號碼">
+                                            <input class="form-control" ng-model="form.Clinic_No" type="text" style="font-size: large" placeholder="請輸入病歷號碼">
                                             <br>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">
-                                            <span class="auto-style1">姓名：</span>
+                                            <span class="auto-style1">病患姓名：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="請輸入中文姓名">
-                                            <br>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">
-                                            <span class="auto-style1">個案班級：</span>
-                                        </label>
-                                        <div class="col-md-8">
-                                            <input class="form-control" style="font-size: large" placeholder="格式範例：A班則填入A即可">
+                                            <input class="form-control" ng-model="form.Clinic_Name" type="text" style="font-size: large" placeholder="請輸入中文姓名">
                                             <br>
                                         </div>
                                     </div>
@@ -49,7 +40,7 @@
                                             <span class="auto-style1">收案日期：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="格式範例：20170101">
+                                            <input class="form-control" ng-model="form.BeginTime" type="text" style="font-size: large" placeholder="格式範例：20170101">
                                             <br>
                                         </div>
                                     </div>
@@ -58,7 +49,7 @@
                                             <span class="auto-style1">結案日期：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large" placeholder="格式範例：20170101">
+                                            <input class="form-control" ng-model="form.endDate" type="text" style="font-size: large" placeholder="格式範例：20170101">
                                             <br>
                                         </div>
                                     </div>
@@ -67,7 +58,7 @@
                                             <span class="auto-style1">結案原因：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" style="font-size: large">
+                                            <input class="form-control" ng-model="form.endReason" type="text" style="font-size: large">
                                             <br>
                                         </div>
                                     </div>
@@ -79,9 +70,9 @@
                                 <form role="form">
                                     <br>
                                     <br>
-                                    <button type="submit" class="btn btn-outline btn-primary btn-lg btn-block">填寫完成</button>
+                                    <button type="submit" ng-click="submit()" class="btn btn-outline btn-primary btn-lg btn-block">填寫完成</button>
                                     <br>
-                                    <button type="reset" class="btn btn-outline btn-primary btn-lg btn-block">重新填寫</button>
+                                    <button type="reset" ng-click="clear()" class="btn btn-outline btn-primary btn-lg btn-block">重新填寫</button>
                                 </form>
                             </div>
                             <!-- /.col-lg-12 (按鈕) -->

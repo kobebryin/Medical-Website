@@ -21,7 +21,6 @@
                                 <tr>
                                     <th>病歷編號</th>
                                     <th>姓名</th>
-                                    <th>班級</th>
                                     <th>主治醫師</th>
                                     <th>衛教師</th>
                                     <th>衛教日期</th>
@@ -34,19 +33,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="odd gradeX">
-                                    <td>052216001</td>
-                                    <td>王曉明</td>
-                                    <td>A</td>
-                                    <td>呂阿美</td>
-                                    <td>周小玄</td>
-                                    <td>20170305</td>
-                                    <td>本人</td>
-                                    <td>個別衛教</td>
-                                    <td>高血壓藥</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr class="odd gradeX" ng-repeat="careinfoData in careinfoDatas">
+                                    <td>{{careinfoData.Clinic_No}}</td>
+                                    <td>{{careinfoData.Clinic_Name}}</td>
+                                    <td>{{careinfoData.Doc_Name}}</td>
+                                    <td>{{careinfoData.Doc_Name_2}}</td>
+                                    <td>{{careinfoData.EducationDate}}</td>
+                                    <td>{{careinfoData.EducationTarget}}</td>
+                                    <td>{{careinfoData.Method}}</td>
+                                    <td>{{careinfoData.MedicineUse}}</td>
+                                    <td>{{careinfoData.AdmissionDate}}</td>
+                                    <td>{{careinfoData.Reason}}</td>
+                                    <td>{{careinfoData.DischargeDate}}</td>
                                 </tr>
 
                             </tbody>
