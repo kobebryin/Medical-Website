@@ -32,6 +32,14 @@ router.get('/', function (req, res, next) {
             else
                 result[i].Stage = '無匹配/有錯誤';
         }
+        for (var i in result) {
+            if (result[i].Gender == '1')
+                result[i].Gender = '男';
+            else if (result[i].Gender == '2')
+                result[i].Gender = '女';
+            else
+                result[i].Gender = '無匹配/有錯誤';
+        }
 
         res.json(result);
     })

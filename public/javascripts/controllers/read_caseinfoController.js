@@ -24,7 +24,7 @@ angular.module('Medical Website').controller('read_caseinfoController', function
                 //datatables jquery setup
                 $(document).ready(function () {
                     table = $('#dataTables-example').DataTable({
-                        "order": [[0, "asc"],[2, "asc"]],         //用ＩＤ和班級當排序，遞增
+                        "order": [[0, "asc"], [2, "asc"]],         //用ＩＤ和班級當排序，遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {
                                 nRow.className = nRow.className + aData[4]; return nRow;
@@ -40,7 +40,7 @@ angular.module('Medical Website').controller('read_caseinfoController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example1').DataTable({
-                        "order": [[0, "asc"],[2, "asc"]],         //用ＩＤ和班級當排序，遞增
+                        "order": [[0, "asc"], [2, "asc"]],         //用ＩＤ和班級當排序，遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {
                                 nRow.className = nRow.className + aData[4]; return nRow;

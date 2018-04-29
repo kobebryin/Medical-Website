@@ -24,10 +24,19 @@ angular.module('Medical Website').controller('read_casedataController', function
                 //datatables jquery setup
                 $(document).ready(function () {
                     table = $('#dataTables-example').DataTable({
-                        "order": [[0, "asc"],[2, "asc"]],         //用ＩＤ和班級當排序，遞增
+                        "order": [[7, "desc"], [2, "asc"]],         //用檢驗日期和班級當排序，檢驗日期遞減，班級遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {
-                                nRow.className = nRow.className + aData[4]; return nRow;
+                                nRow.className = nRow.className + aData[4];
+                                if (aData[6] >= 90 && aData[3] == '男') {
+                                    $('td:eq(6)', nRow).css("color", "red");
+                                    $('td:eq(6)', nRow).css("font-weight", "bold");
+                                }
+                                else if (aData[6] >= 80 && aData[3] == '女') {
+                                    $('td:eq(6)', nRow).css("color", "red");
+                                    $('td:eq(6)', nRow).css("font-weight", "bold");
+                                }
+                                return nRow;
                             },
                         "aoData": [
                             null,
@@ -40,10 +49,19 @@ angular.module('Medical Website').controller('read_casedataController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example1').DataTable({
-                        "order": [[0, "asc"],[2, "asc"]],         //用ＩＤ當排序，遞減
+                        "order": [[5, "desc"], [2, "asc"]],         //用檢驗日期和班級當排序，檢驗日期遞減，班級遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {
-                                nRow.className = nRow.className + aData[4]; return nRow;
+                                nRow.className = nRow.className + aData[4];
+                                if (aData[3] < 110 || aData[3] > 200) {
+                                    $('td:eq(3)', nRow).css("color", "red");
+                                    $('td:eq(3)', nRow).css("font-weight", "bold");
+                                }
+                                else if (aData[4] >= 150) {
+                                    $('td:eq(4)', nRow).css("color", "red");
+                                    $('td:eq(4)', nRow).css("font-weight", "bold");
+                                }
+                                return nRow;
                             },
                         "aoData": [
                             null,
@@ -56,10 +74,23 @@ angular.module('Medical Website').controller('read_casedataController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example2').DataTable({
-                        "order": [[0, "asc"],[2, "asc"]],         //用ＩＤ當排序，遞減
+                        "order": [[6, "desc"], [2, "asc"]],         //用檢驗日期和班級當排序，檢驗日期遞減，班級遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {
-                                nRow.className = nRow.className + aData[4]; return nRow;
+                                nRow.className = nRow.className + aData[4];
+                                if (aData[3] >= 130) {
+                                    $('td:eq(3)', nRow).css("color", "red");
+                                    $('td:eq(3)', nRow).css("font-weight", "bold");
+                                }
+                                else if (aData[4] >= 85) {
+                                    $('td:eq(4)', nRow).css("color", "red");
+                                    $('td:eq(4)', nRow).css("font-weight", "bold");
+                                }
+                                else if (aData[5] > 130) {
+                                    $('td:eq(5)', nRow).css("color", "red");
+                                    $('td:eq(5)', nRow).css("font-weight", "bold");
+                                }
+                                return nRow;
                             },
                         "aoData": [
                             null,
@@ -72,10 +103,19 @@ angular.module('Medical Website').controller('read_casedataController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example3').DataTable({
-                        "order": [[0, "asc"],[2, "asc"]],         //用ＩＤ當排序，遞減
+                        "order": [[5, "desc"], [2, "asc"]],         //用檢驗日期和班級當排序，檢驗日期遞減，班級遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {
-                                nRow.className = nRow.className + aData[4]; return nRow;
+                                nRow.className = nRow.className + aData[4];
+                                if (aData[3] < 70 || aData[3] > 110) {
+                                    $('td:eq(3)', nRow).css("color", "red");
+                                    $('td:eq(3)', nRow).css("font-weight", "bold");
+                                }
+                                else if (aData[4] < 4.00 || aData[4] > 6.00) {
+                                    $('td:eq(4)', nRow).css("color", "red");
+                                    $('td:eq(4)', nRow).css("font-weight", "bold");
+                                }
+                                return nRow;
                             },
                         "aoData": [
                             null,
@@ -88,10 +128,27 @@ angular.module('Medical Website').controller('read_casedataController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example4').DataTable({
-                        "order": [[0, "asc"],[2, "asc"]],         //用ＩＤ當排序，遞減
+                        "order": [[9, "desc"], [2, "asc"]],         //用檢驗日期和班級當排序，檢驗日期遞減，班級遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {
-                                nRow.className = nRow.className + aData[4]; return nRow;
+                                nRow.className = nRow.className + aData[4];
+                                if (aData[3] < 7 || aData[3] > 25) {
+                                    $('td:eq(3)', nRow).css("color", "red");
+                                    $('td:eq(3)', nRow).css("font-weight", "bold");
+                                }
+                                else if (aData[4] < 0.5 || aData[4] > 1.3) {
+                                    $('td:eq(4)', nRow).css("color", "red");
+                                    $('td:eq(4)', nRow).css("font-weight", "bold");
+                                }
+                                else if (aData[5] < 100) {
+                                    $('td:eq(5)', nRow).css("color", "red");
+                                    $('td:eq(5)', nRow).css("font-weight", "bold");
+                                }
+                                else if (aData[7] < 150) {
+                                    $('td:eq(7)', nRow).css("color", "red");
+                                    $('td:eq(7)', nRow).css("font-weight", "bold");
+                                }
+                                return nRow;
                             },
                         "aoData": [
                             null,
