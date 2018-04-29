@@ -12,7 +12,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading ">
-                        <i class="fa fa-bar-chart-o fa-fw"></i>檢驗資料查詢
+                        <i class="fa fa-bar-chart-o fa-fw"></i>檢驗資料_肥胖
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -25,19 +25,6 @@
                                     <th>身高</th>
                                     <th>體重</th>
                                     <th>腰圍</th>
-                                    <th>收縮壓</th>
-                                    <th>舒張壓</th>
-                                    <th>AC Sugar</th>
-                                    <th>HbA1C</th>
-                                    <th>BUN</th>
-                                    <th>Creatinine</th>
-                                    <th>eGFR</th>
-                                    <th>期別</th>
-                                    <th>TCH</th>
-                                    <th>TG</th>
-                                    <th>LDL</th>
-                                    <th>UACR</th>
-                                    <th>UR</th>
                                     <th>檢驗時間</th>
                                 </tr>
                             </thead>
@@ -49,17 +36,156 @@
                                     <td>{{casenumData.Height}}</td>
                                     <td>{{casenumData.Weight}}</td>
                                     <td>{{casenumData.Waist}}</td>
+                                    <td>{{casenumData.Inspectionday}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.檢驗資料_肥胖col-lg-12 -->
+            <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading ">
+                            <i class="fa fa-bar-chart-o fa-fw"></i>檢驗資料_高血脂
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example1">
+                                <thead>
+                                    <tr>
+                                        <th>病歷編號</th>
+                                        <th>姓名</th>
+                                        <th>班級</th>
+                                        <th>TCH</th>
+                                        <th>TG</th>
+                                        <th>檢驗時間</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX" ng-repeat="casenumData in casenumDatas">
+                                        <td>{{casenumData.Clinic_No}}</td>
+                                        <td>{{casenumData.Clinic_Name}}</td>
+                                        <td>{{casenumData.Class_Name}}</td>
+                                        <td>{{casenumData.TCH}}</td>
+                                        <td>{{casenumData.TG}}</td>
+                                        <td>{{casenumData.Inspectionday}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.檢驗資料_高血脂col-lg-12 -->
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading ">
+                        <i class="fa fa-bar-chart-o fa-fw"></i>檢驗資料_高血壓
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example2">
+                            <thead>
+                                <tr>
+                                    <th>病歷編號</th>
+                                    <th>姓名</th>
+                                    <th>班級</th>
+                                    <th>收縮壓</th>
+                                    <th>舒張壓</th>
+                                    <th>LDL</th>
+                                    <th>檢驗時間</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd gradeX" ng-repeat="casenumData in casenumDatas">
+                                    <td>{{casenumData.Clinic_No}}</td>
+                                    <td>{{casenumData.Clinic_Name}}</td>
+                                    <td>{{casenumData.Class_Name}}</td>
                                     <td>{{casenumData.SBP}}</td>
                                     <td>{{casenumData.DBP}}</td>
+                                    <td>{{casenumData.LDL}}</td>
+                                    <td>{{casenumData.Inspectionday}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading ">
+                        <i class="fa fa-bar-chart-o fa-fw"></i>檢驗資料_糖尿病
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example3">
+                            <thead>
+                                <tr>
+                                    <th>病歷編號</th>
+                                    <th>姓名</th>
+                                    <th>班級</th>
+                                    <th>AC Sugar</th>
+                                    <th>HbA1C</th>
+                                    <th>檢驗時間</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd gradeX" ng-repeat="casenumData in casenumDatas">
+                                    <td>{{casenumData.Clinic_No}}</td>
+                                    <td>{{casenumData.Clinic_Name}}</td>
+                                    <td>{{casenumData.Class_Name}}</td>
                                     <td>{{casenumData.ACSugar}}</td>
                                     <td>{{casenumData.HbA1C}}</td>
+                                    <td>{{casenumData.Inspectionday}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading ">
+                        <i class="fa fa-bar-chart-o fa-fw"></i>檢驗資料_腎臟病
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example4">
+                            <thead>
+                                <tr>
+                                    <th>病歷編號</th>
+                                    <th>姓名</th>
+                                    <th>班級</th>
+                                    <th>BUN</th>
+                                    <th>Creatinine</th>
+                                    <th>eGFR</th>
+                                    <th>期別</th>
+                                    <th>UACR</th>
+                                    <th>UR</th>
+                                    <th>檢驗時間</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd gradeX" ng-repeat="casenumData in casenumDatas">
+                                    <td>{{casenumData.Clinic_No}}</td>
+                                    <td>{{casenumData.Clinic_Name}}</td>
+                                    <td>{{casenumData.Class_Name}}</td>
                                     <td>{{casenumData.BUN}}</td>
                                     <td>{{casenumData.Creatinine}}</td>
                                     <td>{{casenumData.eGFR}}</td>
-                                    <td>{{casenumData.stage}}</td>
-                                    <td>{{casenumData.TCH}}</td>
-                                    <td>{{casenumData.TG}}</td>
-                                    <td>{{casenumData.LDL}}</td>
+                                    <td>{{casenumData.Stage}}</td>
                                     <td>{{casenumData.UACR}}</td>
                                     <td>{{casenumData.UR}}</td>
                                     <td>{{casenumData.Inspectionday}}</td>

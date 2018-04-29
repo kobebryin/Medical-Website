@@ -31,6 +31,7 @@ angular.module('Medical Website').controller('write_caseinfoController', functio
         ];
     
         $scope.religions = [
+            { value: 'No', name: '無' },
             { value: 'Buddhism', name: '佛教' },
             { value: 'Islam', name: '回教' },
             { value: 'Christian', name: '基督教' },
@@ -191,7 +192,7 @@ angular.module('Medical Website').controller('write_caseinfoController', functio
                 Clinic_No: null,
                 Gender: '1',
                 Age: null,
-                Religion: 'Buddhism',
+                Religion: 'No',
                 Education: '0',
                 MaritalStatus: 'Single',
                 JobStatus: 'Y',

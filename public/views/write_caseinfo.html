@@ -106,27 +106,27 @@
                             </div>
                             <!-- /.col-lg-6 (基本資料) -->
                             <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>
+                                        <span class="auto-style1">飲酒習慣：</span>
+                                    </label>
+                                    <select class="form-control" ng-model="form.DrinkHabits" ng-init="form.DrinkHabits = drinkHabits[0].value" style="font-size: large"
+                                        ng-options="drinkHabit.value as drinkHabit.name for drinkHabit in drinkHabits">
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        <span class="auto-style1">運動習慣(一週至少3次，每次30分鐘)：</span>
+                                    </label>
+                                    <select class="form-control" ng-model="form.SportsHabits" ng-init="form.SportsHabits = sportsHabits[0].value" style="font-size: large"
+                                        ng-options="sportsHabit.value as sportsHabit.name for sportsHabit in sportsHabits">
+                                    </select>
+                                </div>
                                 <div style="font-size:2.5em">
                                     <h1>病史</h1>
                                 </div>
                                 <br>
                                 <form role="form">
-                                    <div class="form-group">
-                                        <label>
-                                            <span class="auto-style1">飲酒習慣：</span>
-                                        </label>
-                                        <select class="form-control" ng-model="form.DrinkHabits" ng-init="form.DrinkHabits = drinkHabits[0].value" style="font-size: large"
-                                            ng-options="drinkHabit.value as drinkHabit.name for drinkHabit in drinkHabits">
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>
-                                            <span class="auto-style1">運動習慣(一週至少3次，每次30分鐘)：</span>
-                                        </label>
-                                        <select class="form-control" ng-model="form.SportsHabits" ng-init="form.SportsHabits = sportsHabits[0].value" style="font-size: large"
-                                            ng-options="sportsHabit.value as sportsHabit.name for sportsHabit in sportsHabits">
-                                        </select>
-                                    </div>
                                     <div class="form-group" ng-repeat="medicalHistory in MedicalHistory">
                                         <input type="checkbox" name="{{medicalHistory.name}}" value="{{medicalHistory.value}}" ng-model="medicalHistory.selected"> {{medicalHistory.name}}
                                         <!-- <label>

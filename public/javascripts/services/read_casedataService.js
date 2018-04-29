@@ -9,6 +9,7 @@ angular.module('Medical Website').service('read_casedataService', function ($roo
     this.getCasenumData = function (callback) {
         $http.get($rootScope.apiUrl + 'read_casedataApi').success(function (data) {
             // you can do some processing here
+            
             callback(data);
         });
     }

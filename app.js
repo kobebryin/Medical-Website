@@ -22,6 +22,7 @@ var write_careinfoApi = require('./routes/write_careinfoAPI');
 var write_endinfoApi = require('./routes/write_endinfoAPI');
 var read_careinfoApi = require('./routes/read_careinfoAPI');
 var read_endinfoApi = require('./routes/read_endinfoAPI');
+var indexApi = require('./routes/indexApi');
 
 var app = express();
 
@@ -70,6 +71,7 @@ app.use('/write_careinfoApi', write_careinfoApi);
 app.use('/write_endinfoApi', write_endinfoApi);
 app.use('/read_careinfoApi', read_careinfoApi);
 app.use('/read_endinfoApi', read_endinfoApi);
+app.use('/indexApi', indexApi);
 //app.use('/users', users);
 
 // catch 404 and forward to error handler

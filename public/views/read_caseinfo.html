@@ -2,7 +2,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">基本資料查詢</h1>
+                <h1 class="page-header">基本資料與病史資料查詢</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -11,30 +11,25 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading ">
-                        <i class="fa fa-bar-chart-o fa-fw"></i>基本資料與病史查詢
+                        <i class="fa fa-bar-chart-o fa-fw"></i>基本資料
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th class="auto-style1">病歷編號</th>
-                                    <th class="auto-style2">姓名</th>
+                                    <th>病歷編號</th>
+                                    <th>姓名</th>
                                     <th>班級</th>
                                     <th>性別</th>
                                     <th>年齡</th>
                                     <th>教育程度</th>
                                     <th>婚姻狀況</th>
                                     <th>目前就業</th>
-                                    <th class="auto-style3">居住狀況</th>
+                                    <th>居住狀況</th>
                                     <th>吸菸習慣</th>
                                     <th>飲酒習慣</th>
                                     <th>運動習慣</th>
-                                    <th class="auto-style4">用藥習慣</th>
-                                    <th>病史紀錄</th>
-                                    <th class="auto-style5">糖尿病教育</th>
-                                    <th>自備血糖機</th>
-                                    <th>備註</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,6 +46,41 @@
                                     <td>{{caseinfoData.SmokingHabits}}</td>
                                     <td>{{caseinfoData.DrinkHabits}}</td>
                                     <td>{{caseinfoData.SportsHabits}}</td>
+                                    <!-- <td class="center">{{typeMappingForDataTables[members.Type].name}}</td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading ">
+                        <i class="fa fa-bar-chart-o fa-fw"></i>病史資料
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example1">
+                            <thead>
+                                <tr>
+                                    <th>病歷編號</th>
+                                    <th>姓名</th>
+                                    <th>班級</th>
+                                    <th>用藥習慣</th>
+                                    <th>病史紀錄</th>
+                                    <th>糖尿病教育</th>
+                                    <th>自備血糖機</th>
+                                    <th>備註</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd gradeX" ng-repeat="caseinfoData in caseinfoDatas">
+                                    <td>{{caseinfoData.Clinic_No}}</td>
+                                    <td>{{caseinfoData.Clinic_Name}}</td>
+                                    <td>{{caseinfoData.Class_Name}}</td>
                                     <td>{{caseinfoData.MedicationHabits}}</td>
                                     <td>{{caseinfoData.MedicalHistory}}</td>
                                     <td>{{caseinfoData.DiabetesEducation}}</td>
@@ -65,7 +95,7 @@
                 </div>
                 <!-- /.panel -->
             </div>
-            <!-- /.col-lg-12 -->
+            <!-- /.病史資料查詢col-lg-12 -->
         </div>
         <!-- 基本資料和病史查詢表格結束-->
 

@@ -38,6 +38,7 @@ function InsertInspectionData(req, callback) {
 //Get InspectionData SQL query code
 function GetInspectionData(req, callback) {
     req.dbConnection.query('SELECT * FROM InspectionData;', function (error, results, fields) {
+        
         if (error) throw error;
         console.log('The solution is: ', results);
         callback(results);
