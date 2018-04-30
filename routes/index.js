@@ -6,8 +6,13 @@ var router = express.Router();
     * Date : 2018/03/28
     */
 
-/* GET home page. */
+/* GET login page. */
 router.get('/', function (req, res, next) {
+  res.render('login', { title: 'webtest' });
+});
+
+/* GET home page. */
+router.get('/index', function (req, res, next) {
   res.render('index', { title: 'webtest' });
 });
 

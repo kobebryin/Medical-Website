@@ -37,7 +37,7 @@ function InsertInspectionData(req, callback) {
 
 //Get InspectionData SQL query code
 function GetInspectionData(req, callback) {
-    req.dbConnection.query('SELECT a.*,b.Gender FROM InspectionData a INNER JOIN customdata b ON a.Clinic_No=b.Clinic_No;', function (error, results, fields) {
+    req.dbConnection.query('SELECT a.*,b.Gender FROM InspectionData a INNER JOIN CustomData b ON a.Clinic_No=b.Clinic_No;', function (error, results, fields) {
         
         if (error) throw error;
         console.log('The solution is: ', results);

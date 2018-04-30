@@ -12,7 +12,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-//var users = require('./routes/users');
+var users = require('./routes/users');
 /** -----  database MySql api routes  -----*/
 var write_caseinfoApi = require('./routes/write_caseinfoAPI');
 var read_caseinfoApi = require('./routes/read_caseinfoAPI');
@@ -41,10 +41,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /** -------------------------connect MySQL-----------------------START----- */
 var connection = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root',
-  password: 'vivi0304abc',
-  database: 'testmedical'  
+  // host: '127.0.0.1',
+  // user: 'root',
+  // password: 'vivi0304abc',
+  // database: 'testmedical' 
+  host: 'tingyinas.myqnapcloud.com',
+  user: 'kobebryin',
+  password: 'ilove5205><',
+  database: 'testMedical' 
 });
 
 connection.connect(function (err) {
@@ -74,7 +78,7 @@ app.use('/read_careinfoApi', read_careinfoApi);
 app.use('/read_endinfoApi', read_endinfoApi);
 app.use('/indexApi', indexApi);
 app.use('/read_daycareinfoApi', read_daycareinfoApi);
-//app.use('/users', users);
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
