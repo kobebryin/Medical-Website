@@ -1,9 +1,9 @@
-angular.module('Medical Website').controller('indexController', function ($rootScope, $scope, indexService) {
-    $scope.content = 'Web Developer : Jimmy Liang \n Date: 2017.09.30';
+angular.module('Medical Website').controller('read_daycareinfoController', function ($rootScope, $scope, read_daycareinfoService) {
+
     /**
-        * Author : Jimmy Liang
-        * Date : 2018/04/23
-        */
+    * Author : Jimmy Liang
+    * Date : 2018/04/23
+    */
 
     var table;  //datatables variable
 
@@ -16,22 +16,19 @@ angular.module('Medical Website').controller('indexController', function ($rootS
         $.LoadingOverlay('show');   //show the loadingoverlay...
 
         //call sql api
-        indexService.getIndexData(function (data) {
-            $scope.indexDatas = data;    //insert get data into variable
+        read_daycareinfoService.getDaycareinfoData(function (data) {
+            $scope.daycareinfoDatas = data;    //insert get data into variable
 
             //set timeout to let data get first(cause javascripts is asynchronous).
             setTimeout(function () {
                 //datatables jquery setup
                 $(document).ready(function () {
                     table = $('#dataTables-example').DataTable({
-                        "order": [[4, "desc"], [2, "asc"]],         //用檢驗日期和班級當排序，檢驗日期遞減，班級遞增
+                        "order": [[2, "desc"]],         //用ＩＤ當排序，遞減
                         "fnRowCallback":
-                            function (nRow, aData, iDisplayIndex) {
-                                nRow.className = nRow.className + aData[4];
-                                $('td:eq(3)', nRow).css("color", "red");
-                                $('td:eq(3)', nRow).css("font-weight", "bold");
-                                return nRow;
-                            },
+                        function (nRow, aData, iDisplayIndex) {
+                            nRow.className = nRow.className + aData[4]; return nRow;
+                        },
                         "aoData": [
                             null,
                             null,
@@ -40,7 +37,6 @@ angular.module('Medical Website').controller('indexController', function ($rootS
                             { "sClass": "center" }
                         ]
                     });
-
                 });
             }, 200);
             $.LoadingOverlay('hide');   //when post finished then hide the loadingoverlay...

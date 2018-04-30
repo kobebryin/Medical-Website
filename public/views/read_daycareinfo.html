@@ -21,7 +21,6 @@
                                 <tr>
                                     <th>病歷編號</th>
                                     <th>姓名</th>
-                                    <th>班級</th>
                                     <th>紀錄日期</th>
                                     <th>是否運動</th>
                                     <th>運動多久</th>
@@ -29,14 +28,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="odd gradeX">
-                                    <td>052216001</td>
-                                    <td>王曉明</td>
-                                    <td>A</td>
-                                    <td>20170305</td>
-                                    <td>是</td>
-                                    <td>30分鐘</td>
-                                    <td></td>
+                                <tr class="odd gradeX" ng-repeat="daycareinfoData in daycareinfoDatas">
+                                    <td>{{daycareinfoData.Clinic_No}}</td>
+                                    <td>{{daycareinfoData.Clinic_Name}}</td>
+                                    <td>{{daycareinfoData.Record_Date}}</td>
+                                    <td>{{daycareinfoData.movement}}</td>
+                                    <td>{{daycareinfoData.Movement_time}}</td>
+                                    <td>{{daycareinfoData.Day_record}}</td>
                                 </tr>
 
                             </tbody>

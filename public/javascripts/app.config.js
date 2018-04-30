@@ -48,8 +48,8 @@ angular.module('Medical Website').config(function($stateProvider, $urlRouterProv
     })
     .state('read_daycareinfo', {
       url: "/read_daycareinfo",
-      templateUrl: "views/read_daycareinfo.html"/*,
-      controller: "IndexController"*/
+      templateUrl: "views/read_daycareinfo.html",
+      controller: "read_daycareinfoController"
     })
     .state('write_endinfo', {
       url: "/write_endinfo",
