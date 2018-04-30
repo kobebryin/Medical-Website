@@ -49,6 +49,7 @@ angular.module('Medical Website').controller('write_careinfoController', functio
             //insert system's datetime into scope.form.ModifiedDate
             var Today = new Date(); //initialize Date Object. 
             $scope.form.ModifiedDate = Today.getFullYear() + '-' + (Today.getMonth() + 1) + '-' + Today.getDate() + " " + Today.getHours() + ":" + Today.getMinutes() + ":" + Today.getSeconds();
+            $scope.form.ModifiedBy = sessionStorage.LoginUser;
 
             //call the post CustomData & InspectionData data api
             write_careinfoService.postCareinfo($scope.form, function (data) {

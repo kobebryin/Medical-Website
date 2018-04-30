@@ -30,12 +30,12 @@ angular.module('Medical Website').controller('write_endinfoController', function
                 //insert system's datetime into scope.form.ModifiedDate
                 var Today = new Date(); //initialize Date Object. 
                 $scope.form.ModifiedDate = Today.getFullYear() + '-' + (Today.getMonth() + 1) + '-' + Today.getDate() + " " + Today.getHours() + ":" + Today.getMinutes() + ":" + Today.getSeconds();
-    
+                $scope.form.ModifiedBy = sessionStorage.LoginUser;
+
                 //call the post CustomData & InspectionData data api
                 write_endinfoService.postEndinfo($scope.form, function (data) {
                     console.log(data); //log the api post status
                     $.LoadingOverlay('hide');   //when post finished then hide the loadingoverlay...
-                    
                 });
             };
         };

@@ -9,7 +9,7 @@
 
 //Get dayCareinfo SQL query code
 function GetDaycareInfoData(req, callback) {
-    req.dbConnection.query('SELECT * FROM appinfo;', function (error, results, fields) {
+    req.dbConnection.query('SELECT * FROM AppInfo;', function (error, results, fields) {
         if (error) throw error;
         console.log('The solution is: ', results);
         callback(results);

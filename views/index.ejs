@@ -5,6 +5,7 @@
   <title>
     <%= title %>
   </title>
+
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <script type="text/javascript" src="libraries/angular/angular.min.js"></script>
   <script type="text/javascript" src="libraries/angular/angular-ui-router.min.js"></script>
@@ -200,6 +201,9 @@
     <!-- /.navbar-static-side -->
   </nav>
   <div ui-view></div>
+  <div style="position:relative;bottom:0px;" align="center">
+      <label>Copyright © 2018 JimmyLiang Website Develop. All rights reserved. Em@il: kobebryin@gmail.com</label>
+  </div>
 </body>
 
 <!-- Morris Charts CSS -->
@@ -210,20 +214,21 @@
 </html>
 
 <script>
-  if (sessionStorage.getItem('token') == null) {
-    //have no jwt token so web deny
-    location.href = '../';
-  } else {
-    //login success
-  }
-
-  $(function () {
-    $('#logout_btn').click(function () {
-      console.log('!!!!!');
-      sessionStorage.removeItem('token');
+    if (sessionStorage.getItem('token') == null) {
+      //have no jwt token so web deny
       location.href = '../';
+    } else {
+      //login success
+    }
+
+    $(function () {
+      $('#logout_btn').click(function () {
+        console.log('!!!!!');
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('LoginUser');
+        location.href = '../';
+      });
     });
-  });
 
 
 </script>
