@@ -24,6 +24,21 @@ angular.module('Medical Website').controller('read_casedataController', function
                 //datatables jquery setup
                 $(document).ready(function () {
                     table = $('#dataTables-example').DataTable({
+                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        buttons: [
+                            {
+                              extend: 'excel',
+                              text: 'Export excel',
+                              className: 'exportExcel',
+                              messageTop: '檢驗資料查詢 - 檢驗資料_肥胖',
+                              filename: '檢驗資料查詢 - 檢驗資料_肥胖',
+                              exportOptions: {
+                                modifier: {
+                                  page: 'all'
+                                }
+                              }
+                            }
+                        ],
                         "order": [[7, "desc"], [2, "asc"]],         //用檢驗日期和班級當排序，檢驗日期遞減，班級遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {
@@ -49,6 +64,21 @@ angular.module('Medical Website').controller('read_casedataController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example1').DataTable({
+                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        buttons: [
+                            {
+                              extend: 'excel',
+                              text: 'Export excel',
+                              className: 'exportExcel',
+                              messageTop: '檢驗資料查詢 - 檢驗資料_高血脂',
+                              filename: '檢驗資料查詢 - 檢驗資料_高血脂',
+                              exportOptions: {
+                                modifier: {
+                                  page: 'all'
+                                }
+                              }
+                            }
+                        ],
                         "order": [[5, "desc"], [2, "asc"]],         //用檢驗日期和班級當排序，檢驗日期遞減，班級遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {
@@ -74,6 +104,21 @@ angular.module('Medical Website').controller('read_casedataController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example2').DataTable({
+                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        buttons: [
+                            {
+                              extend: 'excel',
+                              text: 'Export excel',
+                              className: 'exportExcel',
+                              messageTop: '檢驗資料查詢 - 檢驗資料_高血壓',
+                              filename: '檢驗資料查詢 - 檢驗資料_高血壓',
+                              exportOptions: {
+                                modifier: {
+                                  page: 'all'
+                                }
+                              }
+                            }
+                        ],
                         "order": [[6, "desc"], [2, "asc"]],         //用檢驗日期和班級當排序，檢驗日期遞減，班級遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {
@@ -103,6 +148,21 @@ angular.module('Medical Website').controller('read_casedataController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example3').DataTable({
+                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        buttons: [
+                            {
+                              extend: 'excel',
+                              text: 'Export excel',
+                              className: 'exportExcel',
+                              messageTop: '檢驗資料查詢 - 檢驗資料_糖尿病',
+                              filename: '檢驗資料查詢 - 檢驗資料_糖尿病',
+                              exportOptions: {
+                                modifier: {
+                                  page: 'all'
+                                }
+                              }
+                            }
+                        ],
                         "order": [[5, "desc"], [2, "asc"]],         //用檢驗日期和班級當排序，檢驗日期遞減，班級遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {
@@ -128,6 +188,21 @@ angular.module('Medical Website').controller('read_casedataController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example4').DataTable({
+                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        buttons: [
+                            {
+                              extend: 'excel',
+                              text: 'Export excel',
+                              className: 'exportExcel',
+                              messageTop: '檢驗資料查詢 - 檢驗資料_腎臟病',
+                              filename: '檢驗資料查詢 - 檢驗資料_腎臟病',
+                              exportOptions: {
+                                modifier: {
+                                  page: 'all'
+                                }
+                              }
+                            }
+                        ],
                         "order": [[9, "desc"], [2, "asc"]],         //用檢驗日期和班級當排序，檢驗日期遞減，班級遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {

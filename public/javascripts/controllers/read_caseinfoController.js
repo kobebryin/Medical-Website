@@ -24,6 +24,21 @@ angular.module('Medical Website').controller('read_caseinfoController', function
                 //datatables jquery setup
                 $(document).ready(function () {
                     table = $('#dataTables-example').DataTable({
+                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        buttons: [
+                            {
+                              extend: 'excel',
+                              text: 'Export excel',
+                              className: 'exportExcel',
+                              messageTop: '基本資料與病史資料查詢 - 基本資料',
+                              filename: '基本資料與病史資料查詢 - 基本資料',
+                              exportOptions: {
+                                modifier: {
+                                  page: 'all'
+                                }
+                              }
+                            }
+                        ],
                         "order": [[0, "asc"], [2, "asc"]],         //用ＩＤ和班級當排序，遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {
@@ -40,6 +55,21 @@ angular.module('Medical Website').controller('read_caseinfoController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example1').DataTable({
+                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        buttons: [
+                            {
+                              extend: 'excel',
+                              text: 'Export excel',
+                              className: 'exportExcel',
+                              messageTop: '基本資料與病史資料查詢 - 病史資料',
+                              filename: '基本資料與病史資料查詢 - 病史資料',
+                              exportOptions: {
+                                modifier: {
+                                  page: 'all'
+                                }
+                              }
+                            }
+                        ],
                         "order": [[0, "asc"], [2, "asc"]],         //用ＩＤ和班級當排序，遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {

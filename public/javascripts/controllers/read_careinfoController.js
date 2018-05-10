@@ -24,12 +24,27 @@ angular.module('Medical Website').controller('read_careinfoController', function
                 //datatables jquery setup
                 $(document).ready(function () {
                     table = $('#dataTables-example').DataTable({
-                        "order": [[0, "desc"]],         //用ＩＤ當排序，遞減
-                        "fnRowCallback":
+                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        buttons: [
+                            {
+                              extend: 'excel',
+                              text: 'Export excel',
+                              className: 'exportExcel',
+                              messageTop: '照護資料查詢',
+                              filename: '照護資料查詢',
+                              exportOptions: {
+                                modifier: {
+                                  page: 'all'
+                                }
+                              }
+                            }
+                        ],
+                        order: [[0, "desc"]],         //用ＩＤ當排序，遞減
+                        fnRowCallback:
                         function (nRow, aData, iDisplayIndex) {
                             nRow.className = nRow.className + aData[4]; return nRow;
                         },
-                        "aoData": [
+                        aoData: [
                             null,
                             null,
                             { "bVisible": false, "bSearchable": false },

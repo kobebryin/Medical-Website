@@ -24,6 +24,21 @@ angular.module('Medical Website').controller('indexController', function ($rootS
                 //datatables jquery setup
                 $(document).ready(function () {
                     table = $('#dataTables-example').DataTable({
+                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        buttons: [
+                            {
+                              extend: 'excel',
+                              text: 'Export excel',
+                              className: 'exportExcel',
+                              messageTop: '追蹤個案 - 數值異常之個案',
+                              filename: '追蹤個案 - 數值異常之個案',
+                              exportOptions: {
+                                modifier: {
+                                  page: 'all'
+                                }
+                              }
+                            }
+                        ],
                         "order": [[4, "desc"], [2, "asc"]],         //用檢驗日期和班級當排序，檢驗日期遞減，班級遞增
                         "fnRowCallback":
                             function (nRow, aData, iDisplayIndex) {

@@ -24,6 +24,21 @@ angular.module('Medical Website').controller('read_endinfoController', function 
                 //datatables jquery setup
                 $(document).ready(function () {
                     table = $('#dataTables-example').DataTable({
+                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        buttons: [
+                            {
+                              extend: 'excel',
+                              text: 'Export excel',
+                              className: 'exportExcel',
+                              messageTop: '結案資料查詢',
+                              filename: '結案資料查詢',
+                              exportOptions: {
+                                modifier: {
+                                  page: 'all'
+                                }
+                              }
+                            }
+                        ],
                         "order": [[0, "desc"]],         //用ＩＤ當排序，遞減
                         "fnRowCallback":
                         function (nRow, aData, iDisplayIndex) {

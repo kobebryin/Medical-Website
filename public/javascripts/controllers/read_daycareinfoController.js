@@ -24,6 +24,21 @@ angular.module('Medical Website').controller('read_daycareinfoController', funct
                 //datatables jquery setup
                 $(document).ready(function () {
                     table = $('#dataTables-example').DataTable({
+                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        buttons: [
+                            {
+                              extend: 'excel',
+                              text: 'Export excel',
+                              className: 'exportExcel',
+                              messageTop: '日常資料與運動紀錄查詢',
+                              filename: '日常資料與運動紀錄查詢',
+                              exportOptions: {
+                                modifier: {
+                                  page: 'all'
+                                }
+                              }
+                            }
+                        ],
                         "order": [[2, "desc"]],         //用ＩＤ當排序，遞減
                         "fnRowCallback":
                         function (nRow, aData, iDisplayIndex) {

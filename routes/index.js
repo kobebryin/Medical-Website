@@ -8,12 +8,12 @@ var router = express.Router();
 
 /* GET login page. */
 router.get('/', function (req, res, next) {
-  res.render('login', { title: 'webtest' });
+  res.render('login', { title: '代謝症候群個案管理系統' });
 });
 
 /* GET home page. */
 router.get('/index', function (req, res, next) {
-  res.render('index', { title: 'webtest' });
+  res.render('index', { title: '代謝症候群個案管理系統' });
 });
 
 router.get('/test', function (req, res, next) {
