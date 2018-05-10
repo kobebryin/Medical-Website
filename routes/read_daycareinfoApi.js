@@ -22,20 +22,20 @@ router.get('/', function (req, res, next) {
         }
 
         for (var i in result) {
-            if (result[i].Movement_time == '0')
-                result[i].Movement_time = '無';
-            else if (result[i].Movement_time == '1')
-                result[i].Movement_time = '30分鐘';
-            else if (result[i].Movement_time == '2')
-                result[i].Movement_time = '1小時';
-            else if (result[i].Movement_time == '3')
-                result[i].Movement_time = '1.5小時';
-            else if (result[i].Movement_time == '4')
-                result[i].Movement_time = '2小時';
-            else if (result[i].Movement_time == '5')
-                result[i].Movement_time = '2.5小時';
+            if (result[i].Movement_Time == '0')
+                result[i].Movement_Time = '無';
+            else if (result[i].Movement_Time == '1')
+                result[i].Movement_Time = '30分鐘';
+            else if (result[i].Movement_Time == '2')
+                result[i].Movement_Time = '1小時';
+            else if (result[i].Movement_Time == '3')
+                result[i].Movement_Time = '1.5小時';
+            else if (result[i].Movement_Time == '4')
+                result[i].Movement_Time = '2小時';
+            else if (result[i].Movement_Time == '5')
+                result[i].Movement_Time = '2.5小時';
             else
-                result[i].Movement_time = '無匹配/有錯誤';
+                result[i].Movement_Time = '無匹配/有錯誤';
         }
 
         res.json(result);

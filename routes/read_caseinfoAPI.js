@@ -41,6 +41,7 @@ router.get('/', function (req, res, next) {
 
         //Education's type mapping
         for (var i in result) {
+            console.log(result[i].MaritalStatus);
             if (result[i].MaritalStatus == 'Single')
                 result[i].MaritalStatus = '未婚';
             else if (result[i].MaritalStatus == 'Married')
