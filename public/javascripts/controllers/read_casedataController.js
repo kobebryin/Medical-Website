@@ -47,7 +47,7 @@ angular.module('Medical Website').controller('read_casedataController', function
                                     $('td:eq(6)', nRow).css("color", "red");
                                     $('td:eq(6)', nRow).css("font-weight", "bold");
                                 }
-                                else if (aData[6] >= 80 && aData[3] == '女') {
+                                if (aData[6] >= 80 && aData[3] == '女') {
                                     $('td:eq(6)', nRow).css("color", "red");
                                     $('td:eq(6)', nRow).css("font-weight", "bold");
                                 }
@@ -87,7 +87,7 @@ angular.module('Medical Website').controller('read_casedataController', function
                                     $('td:eq(3)', nRow).css("color", "red");
                                     $('td:eq(3)', nRow).css("font-weight", "bold");
                                 }
-                                else if (aData[4] >= 150) {
+                                if (aData[4] >= 150) {
                                     $('td:eq(4)', nRow).css("color", "red");
                                     $('td:eq(4)', nRow).css("font-weight", "bold");
                                 }
@@ -127,11 +127,11 @@ angular.module('Medical Website').controller('read_casedataController', function
                                     $('td:eq(3)', nRow).css("color", "red");
                                     $('td:eq(3)', nRow).css("font-weight", "bold");
                                 }
-                                else if (aData[4] >= 85) {
+                                if (aData[4] >= 85) {
                                     $('td:eq(4)', nRow).css("color", "red");
                                     $('td:eq(4)', nRow).css("font-weight", "bold");
                                 }
-                                else if (aData[5] > 130) {
+                                if (aData[5] > 130) {
                                     $('td:eq(5)', nRow).css("color", "red");
                                     $('td:eq(5)', nRow).css("font-weight", "bold");
                                 }
@@ -171,7 +171,7 @@ angular.module('Medical Website').controller('read_casedataController', function
                                     $('td:eq(3)', nRow).css("color", "red");
                                     $('td:eq(3)', nRow).css("font-weight", "bold");
                                 }
-                                else if (aData[4] < 4.00 || aData[4] > 6.00) {
+                                if (aData[4] < 4.00 || aData[4] > 6.00) {
                                     $('td:eq(4)', nRow).css("color", "red");
                                     $('td:eq(4)', nRow).css("font-weight", "bold");
                                 }
@@ -211,15 +211,15 @@ angular.module('Medical Website').controller('read_casedataController', function
                                     $('td:eq(3)', nRow).css("color", "red");
                                     $('td:eq(3)', nRow).css("font-weight", "bold");
                                 }
-                                else if (aData[4] < 0.5 || aData[4] > 1.3) {
+                                if (aData[4] < 0.5 || aData[4] > 1.3) {
                                     $('td:eq(4)', nRow).css("color", "red");
                                     $('td:eq(4)', nRow).css("font-weight", "bold");
                                 }
-                                else if (aData[5] < 100) {
+                                if (aData[5] < 100) {
                                     $('td:eq(5)', nRow).css("color", "red");
                                     $('td:eq(5)', nRow).css("font-weight", "bold");
                                 }
-                                else if (aData[7] < 150) {
+                                if (aData[7] < 150) {
                                     $('td:eq(7)', nRow).css("color", "red");
                                     $('td:eq(7)', nRow).css("font-weight", "bold");
                                 }
