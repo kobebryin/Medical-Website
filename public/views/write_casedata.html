@@ -139,7 +139,7 @@
                                             <span class="auto-style1">腎絲球過濾率〈eGFR〉：</span>
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" ng-model="form.eGFR" type="text" style="font-size: large" placeholder="MDRD">
+                                            <input class="form-control" ng-change="delay(ChkStage_onChange, 1000)" ng-model="form.eGFR" type="text" style="font-size: large" placeholder="MDRD">
                                             <br>
                                         </div>
                                     </div>

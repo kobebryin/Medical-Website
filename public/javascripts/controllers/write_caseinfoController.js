@@ -1,4 +1,4 @@
-angular.module('Medical Website').controller('write_caseinfoController', function ($rootScope, $scope, write_caseinfoService) {
+angular.module('Medical Website').controller('write_caseinfoController', function ($rootScope, $timeout, $scope, write_caseinfoService) {
 
     /**
      * Author : Jimmy Liang
@@ -160,6 +160,35 @@ angular.module('Medical Website').controller('write_caseinfoController', functio
         ModifiedBy: null
     };
 
+    /*** 利用eGFR自動帶入Stage欄位的數值 */
+    $scope.ChkStage_onChange = function () {
+        console.log($scope.form.eGFR.trim())
+        if ($scope.form.eGFR >= 90 && $scope.form.eGFR <= 100) {
+            $scope.form.Stage = 'Stage1';
+        } else if ($scope.form.eGFR >= 60 && $scope.form.eGFR <= 89) {
+            $scope.form.Stage = 'Stage2';
+        } else if ($scope.form.eGFR >= 45 && $scope.form.eGFR <= 59) {
+            $scope.form.Stage = 'Stage3a';
+        } else if ($scope.form.eGFR >= 30 && $scope.form.eGFR <= 44) {
+            $scope.form.Stage = 'Stage3b';
+        } else if ($scope.form.eGFR >= 15 && $scope.form.eGFR <= 29) {
+            $scope.form.Stage = 'Stage4';
+        } else if ($scope.form.eGFR < 15) {
+            $scope.form.Stage = 'Stage5';
+        } else if ($scope.form.eGFR == null) {
+            $scope.form.Stage = 'no';
+        } else {
+            $scope.form.Stage = 'no';
+        }
+    };
+    $scope.delay = (function () {
+        var promise = null;
+        return function (callback, ms) {
+            $timeout.cancel(promise); //clearTimeout(timer);
+            promise = $timeout(callback, ms); //timer = setTimeout(callback, ms);
+        };
+    })();
+
     /* ---START--- Button's click events zone --- */
     //submit button's click listener
     $scope.submit = function () {
@@ -227,7 +256,7 @@ angular.module('Medical Website').controller('write_caseinfoController', functio
             BUN: null,
             Creatinine: null,
             eGFR: null,
-            Stage: '無',
+            Stage: 'no',
             TCH: null,
             TG: null,
             LDL: null,
