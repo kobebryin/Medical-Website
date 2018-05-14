@@ -29,7 +29,7 @@ angular.module('Medical Website').controller('indexController', function ($rootS
                             {
                               extend: 'excel',
                               text: 'Export excel',
-                              className: 'exportExcel',
+                              className: 'button button1',
                               messageTop: '追蹤個案 - 數值異常之個案',
                               filename: '追蹤個案 - 數值異常之個案',
                               exportOptions: {

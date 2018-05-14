@@ -29,7 +29,7 @@ angular.module('Medical Website').controller('read_caseinfoController', function
                             {
                               extend: 'excel',
                               text: 'Export excel',
-                              className: 'exportExcel',
+                              className: 'button button1',
                               messageTop: '基本資料與病史資料查詢 - 基本資料',
                               filename: '基本資料與病史資料查詢 - 基本資料',
                               exportOptions: {
@@ -60,7 +60,7 @@ angular.module('Medical Website').controller('read_caseinfoController', function
                             {
                               extend: 'excel',
                               text: 'Export excel',
-                              className: 'exportExcel',
+                              className: 'button button1',
                               messageTop: '基本資料與病史資料查詢 - 病史資料',
                               filename: '基本資料與病史資料查詢 - 病史資料',
                               exportOptions: {

@@ -29,7 +29,7 @@ angular.module('Medical Website').controller('read_daycareinfoController', funct
                             {
                               extend: 'excel',
                               text: 'Export excel',
-                              className: 'exportExcel',
+                              className: 'button button1',
                               messageTop: '日常資料與運動紀錄查詢',
                               filename: '日常資料與運動紀錄查詢',
                               exportOptions: {

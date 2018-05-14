@@ -29,7 +29,7 @@ angular.module('Medical Website').controller('read_casedataController', function
                             {
                               extend: 'excel',
                               text: 'Export excel',
-                              className: 'exportExcel',
+                              className: 'button button1',
                               messageTop: '檢驗資料查詢 - 檢驗資料_肥胖',
                               filename: '檢驗資料查詢 - 檢驗資料_肥胖',
                               exportOptions: {
@@ -69,7 +69,7 @@ angular.module('Medical Website').controller('read_casedataController', function
                             {
                               extend: 'excel',
                               text: 'Export excel',
-                              className: 'exportExcel',
+                              className: 'button button1',
                               messageTop: '檢驗資料查詢 - 檢驗資料_高血脂',
                               filename: '檢驗資料查詢 - 檢驗資料_高血脂',
                               exportOptions: {
@@ -109,7 +109,7 @@ angular.module('Medical Website').controller('read_casedataController', function
                             {
                               extend: 'excel',
                               text: 'Export excel',
-                              className: 'exportExcel',
+                              className: 'button button1',
                               messageTop: '檢驗資料查詢 - 檢驗資料_高血壓',
                               filename: '檢驗資料查詢 - 檢驗資料_高血壓',
                               exportOptions: {
@@ -153,7 +153,7 @@ angular.module('Medical Website').controller('read_casedataController', function
                             {
                               extend: 'excel',
                               text: 'Export excel',
-                              className: 'exportExcel',
+                              className: 'button button1',
                               messageTop: '檢驗資料查詢 - 檢驗資料_糖尿病',
                               filename: '檢驗資料查詢 - 檢驗資料_糖尿病',
                               exportOptions: {
@@ -193,7 +193,7 @@ angular.module('Medical Website').controller('read_casedataController', function
                             {
                               extend: 'excel',
                               text: 'Export excel',
-                              className: 'exportExcel',
+                              className: 'button button1',
                               messageTop: '檢驗資料查詢 - 檢驗資料_腎臟病',
                               filename: '檢驗資料查詢 - 檢驗資料_腎臟病',
                               exportOptions: {
