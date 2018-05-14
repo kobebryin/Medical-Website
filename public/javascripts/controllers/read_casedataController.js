@@ -24,7 +24,7 @@ angular.module('Medical Website').controller('read_casedataController', function
                 //datatables jquery setup
                 $(document).ready(function () {
                     table = $('#dataTables-example').DataTable({
-                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        dom: "<'row'<'col-md-6'B><'col-md-4'f>r>t<'row'<'col-md-4'i><'col-md-3'p><'col-md-3'l>>",
                         buttons: [
                             {
                               extend: 'excel',
@@ -64,7 +64,7 @@ angular.module('Medical Website').controller('read_casedataController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example1').DataTable({
-                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        dom: "<'row'<'col-md-6'B><'col-md-4'f>r>t<'row'<'col-md-4'i><'col-md-3'p><'col-md-3'l>>",
                         buttons: [
                             {
                               extend: 'excel',
@@ -104,7 +104,7 @@ angular.module('Medical Website').controller('read_casedataController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example2').DataTable({
-                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        dom: "<'row'<'col-md-6'B><'col-md-4'f>r>t<'row'<'col-md-4'i><'col-md-3'p><'col-md-3'l>>",
                         buttons: [
                             {
                               extend: 'excel',
@@ -148,7 +148,7 @@ angular.module('Medical Website').controller('read_casedataController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example3').DataTable({
-                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        dom: "<'row'<'col-md-6'B><'col-md-4'f>r>t<'row'<'col-md-4'i><'col-md-3'p><'col-md-3'l>>",
                         buttons: [
                             {
                               extend: 'excel',
@@ -188,7 +188,7 @@ angular.module('Medical Website').controller('read_casedataController', function
                 });
                 $(document).ready(function () {
                     table = $('#dataTables-example4').DataTable({
-                        dom: '<"top"B>frt<"bottom"ilp><"clear">',
+                        dom: "<'row'<'col-md-6'B><'col-md-4'f>r>t<'row'<'col-md-4'i><'col-md-3'p><'col-md-3'l>>",
                         buttons: [
                             {
                               extend: 'excel',
